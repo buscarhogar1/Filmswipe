@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@keyframes fsToast { from { opacity:0; transform:translate(-50%,14px) } to { opacity:1; transform:translate(-50%,0) } }
+@keyframes fsFloat { 0%,100% { transform:translateY(0) rotate(var(--r)) } 50% { transform:translateY(-12px) rotate(var(--r)) } }
+.fsScroll::-webkit-scrollbar { width:0; height:0 }
+</style>
+</helmet>
+<div style="min-height:100vh;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:40px;background:#16130f;background-image:radial-gradient(120% 78% at 50% -12%, rgba(244,161,36,.18), transparent 56%);font-family:'Space Grotesk',sans-serif;">
+
+  <div style="display:flex;align-items:center;gap:9px;color:rgba(244,239,231,.62);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;">
+    <span style="width:18px;height:1px;background:rgba(244,239,231,.3);"></span>Filmswipe · entrada de cine<span style="width:18px;height:1px;background:rgba(244,239,231,.3);"></span>
+  </div>
+
+  <div style="position:relative;width:324px;height:692px;background:#0d0b0a;border-radius:46px;padding:12px;box-shadow:0 44px 80px -30px rgba(0,0,0,.85),0 0 0 1px rgba(0,0,0,.65),inset 0 0 0 2px #2a2724;">
+    <div style="position:absolute;top:20px;left:50%;transform:translateX(-50%);width:98px;height:26px;background:#0d0b0a;border-radius:14px;z-index:80;"></div>
+    <div style="position:relative;width:300px;height:668px;background:#23201c;border-radius:36px;overflow:hidden;display:flex;flex-direction:column;color:#F4EFE7;">
+      <div style="position:absolute;inset:0;opacity:.05;background:repeating-linear-gradient(0deg,#000 0 2px,transparent 2px 6px);pointer-events:none;z-index:0;"></div>
+
+      <!-- ============ ONBOARDING ============ -->
+      <sc-if value="{{ showOnboard }}" hint-placeholder-val="{{ true }}">
+      <div style="position:absolute;inset:0;z-index:75;background:#23201c;color:#F4EFE7;display:flex;flex-direction:column;padding:0 26px;overflow:hidden;">
+        <div style="position:absolute;inset:0;opacity:.06;background:repeating-linear-gradient(0deg,#000 0 2px,transparent 2px 6px);pointer-events:none;"></div>
+        <div style="position:absolute;top:-40px;right:-30px;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle at 38% 36%,rgba(244,161,36,.55),rgba(244,161,36,.12) 60%,transparent 72%);pointer-events:none;"></div>
+        <div style="position:absolute;left:-26px;top:158px;width:120px;height:172px;border-radius:14px;background:#2b2620;box-shadow:inset 0 0 0 1px #3a342b;transform:rotate(-9deg);--r:-9deg;animation:fsFloat 7s ease-in-out infinite;"></div>
+        <div style="position:absolute;right:-30px;top:118px;width:124px;height:176px;border-radius:14px;background:#2f2922;box-shadow:inset 0 0 0 1px #3a342b;transform:rotate(8deg);--r:8deg;animation:fsFloat 8s ease-in-out infinite;"></div>
+
+        <div style="height:42px;flex:none;display:flex;align-items:flex-end;justify-content:space-between;padding:0 0 6px;font-size:13px;font-weight:600;position:relative;z-index:2;"><span>9:41</span><span style="font-size:11px;">●●● ▼ ▮</span></div>
+
+        <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;position:relative;z-index:2;">
+          <div style="display:inline-flex;align-self:flex-start;align-items:center;gap:6px;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#23201c;background:#F4A124;padding:5px 11px;border-radius:999px;">★ Entrada</div>
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:46px;line-height:.92;letter-spacing:-.02em;margin:16px 0 0;">Filmswipe</div>
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;line-height:1.02;letter-spacing:-.01em;margin:10px 0 0;color:#F4A124;">Tu memoria de cine, ticket a ticket.</div>
+          <div style="font-size:14px;line-height:1.5;opacity:.82;margin-top:12px;max-width:240px;">Desliza cada entrada para guardar lo que has visto. Explora por décadas, géneros y países.</div>
+        </div>
+
+        <div style="flex:none;position:relative;z-index:2;padding-bottom:26px;">
+          <div style="display:flex;flex-direction:column;gap:11px;margin:18px 0;">
+            <div style="display:flex;align-items:center;gap:13px;"><span style="width:34px;height:34px;flex:none;border-radius:10px;background:#0FB5A4;color:#fff;display:grid;place-items:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 6l6 6-6 6"/><path d="M13 6l6 6-6 6"/></svg></span><span style="display:flex;flex-direction:column;line-height:1.25;"><span style="font-size:14px;font-weight:700;">Desliza a la derecha</span><span style="font-size:12px;font-weight:500;opacity:.62;">La he visto</span></span></div>
+            <div style="display:flex;align-items:center;gap:13px;"><span style="width:34px;height:34px;flex:none;border-radius:10px;background:#FF5A4D;color:#fff;display:grid;place-items:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 6l-6 6 6 6"/><path d="M11 6l-6 6 6 6"/></svg></span><span style="display:flex;flex-direction:column;line-height:1.25;"><span style="font-size:14px;font-weight:700;">Desliza a la izquierda</span><span style="font-size:12px;font-weight:500;opacity:.62;">No la he visto</span></span></div>
+            <div style="display:flex;align-items:center;gap:13px;"><span style="width:34px;height:34px;flex:none;border-radius:10px;background:#F4A124;color:#fff;display:grid;place-items:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 13l6-6 6 6"/><path d="M6 19l6-6 6 6"/></svg></span><span style="display:flex;flex-direction:column;line-height:1.25;"><span style="font-size:14px;font-weight:700;">Desliza arriba</span><span style="font-size:12px;font-weight:500;opacity:.62;">Pendiente</span></span></div>
+          </div>
+          <button onClick="{{ startApp }}" style="width:100%;padding:17px;border:none;border-radius:16px;background:#F4A124;color:#23201c;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:17px;cursor:pointer;box-shadow:0 10px 26px -10px rgba(244,161,36,.8);-webkit-mask:radial-gradient(circle 9px at 0 50%,transparent 98%,#000 100%),radial-gradient(circle 9px at 100% 50%,transparent 98%,#000 100%);-webkit-mask-composite:source-in;mask:radial-gradient(circle 9px at 0 50%,transparent 98%,#000 100%),radial-gradient(circle 9px at 100% 50%,transparent 98%,#000 100%);mask-composite:intersect;">Empezar a deslizar →</button>
+        </div>
+      </div>
+      </sc-if>
+
+      <!-- status bar -->
+      <div style="height:42px;flex:none;display:flex;align-items:flex-end;justify-content:space-between;padding:0 22px 6px;font-size:13px;font-weight:600;position:relative;z-index:2;">
+        <span>9:41</span>
+        <span style="display:flex;gap:5px;align-items:center;font-size:11px;">●●● ▼ <span style="display:inline-block;width:22px;height:11px;border:1.5px solid #F4EFE7;border-radius:3px;position:relative;"><span style="position:absolute;inset:1.5px;left:1.5px;width:12px;background:#F4EFE7;border-radius:1px;"></span></span></span>
+      </div>
+
+      <!-- header -->
+      <div style="flex:none;display:flex;align-items:center;justify-content:space-between;padding:4px 18px 10px;position:relative;z-index:2;">
+        <div style="display:flex;align-items:baseline;gap:8px;">
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:21px;letter-spacing:-.02em;">Filmswipe</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <button onClick="{{ openSearch }}" style="width:34px;height:34px;flex:none;border-radius:999px;border:none;background:rgba(244,239,231,.1);color:#F4EFE7;display:grid;place-items:center;cursor:pointer;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.6-4.6"/></svg>
+          </button>
+          <button onClick="{{ openFilters }}" style="display:flex;align-items:center;gap:6px;padding:7px 12px;border:none;border-radius:999px;background:#F4A124;color:#23201c;font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;position:relative;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 8v6l-4 2v-8z"/></svg>Filtros
+            <sc-if value="{{ hasFilters }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;top:-5px;right:-5px;min-width:17px;height:17px;padding:0 4px;border-radius:999px;background:#FF5A4D;color:#fff;font-size:10px;font-weight:800;display:grid;place-items:center;">{{ filterCount }}</span></sc-if>
+          </button>
+        </div>
+      </div>
+
+      <!-- MAIN -->
+      <div style="position:relative;flex:1;overflow:hidden;z-index:1;">
+
+        <!-- ============ SWIPE / DECK ============ -->
+        <sc-if value="{{ isSwipe }}" hint-placeholder-val="{{ true }}">
+        <div style="position:absolute;inset:0;display:flex;flex-direction:column;padding:2px 22px 0;">
+          <div style="position:relative;flex:1;margin:4px 0 4px;">
+
+            <sc-if value="{{ deckEmpty }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px;padding:20px;">
+              <div style="width:64px;height:64px;border-radius:18px;background:#F4A124;color:#23201c;display:grid;place-items:center;font-size:30px;font-weight:800;">★</div>
+              <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;">Función completa</div>
+              <div style="font-size:13px;color:rgba(244,239,231,.6);max-width:200px;line-height:1.5;">No quedan entradas con estos filtros. Cámbialos para descubrir más.</div>
+              <button onClick="{{ openFilters }}" style="margin-top:4px;padding:11px 20px;border:none;border-radius:999px;background:#F4A124;color:#23201c;font-family:inherit;font-weight:700;font-size:13px;cursor:pointer;">Ajustar filtros</button>
+            </div>
+            </sc-if>
+
+            <!-- peek tickets -->
+            <sc-for list="{{ bgCards }}" as="c" hint-placeholder-count="2">
+              <div style="{{ c.layerStyle }}">
+                <div style="position:absolute;inset:0;background:#F4EFE7;border-radius:18px;box-shadow:0 16px 32px -18px rgba(0,0,0,.7);overflow:hidden;">
+                  <div style="height:58%;background:{{ c.color }};"></div>
+                  <div style="padding:14px 16px;"><div style="height:9px;width:65%;border-radius:3px;background:#e4dccd;"></div><div style="height:9px;width:40%;border-radius:3px;background:#ece5d7;margin-top:8px;"></div></div>
+                </div>
+              </div>
+            </sc-for>
+
+            {{ flyingCard }}
+
+            <!-- TOP draggable ticket -->
+            <sc-if value="{{ hasTop }}" hint-placeholder-val="{{ true }}">
+            <div onPointerDown="{{ onDown }}" style="{{ topCard.liveStyle }}">
+              <div style="position:absolute;inset:0;background:#F4EFE7;border-radius:18px;box-shadow:0 24px 50px -18px rgba(0,0,0,.8);display:flex;flex-direction:column;overflow:visible;">
+                <!-- poster -->
+                <div style="position:relative;flex:none;height:58%;border-radius:18px 18px 0 0;overflow:hidden;">
+                  <dc-import name="MoviePoster" art="true" caption="false" title="{{ topCard.title }}" year="{{ topCard.year }}" genre="{{ topCard.genre }}" director="{{ topCard.director }}" rating="{{ topCard.rating }}" color="{{ topCard.color }}" text-color="{{ topCard.textColor }}" seed="{{ topCard.seed }}" radius="0" hint-size="100%,100%" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;"></dc-import>
+                  <div style="position:absolute;top:12px;left:13px;font-size:9px;font-weight:800;letter-spacing:.16em;color:rgba(255,255,255,.9);">FILMSWIPE · ENTRADA</div>
+                </div>
+                <!-- perforated tear -->
+                <div style="position:relative;height:0;z-index:6;">
+                  <div style="position:absolute;left:-11px;top:-11px;width:22px;height:22px;border-radius:50%;background:#23201c;"></div>
+                  <div style="position:absolute;right:-11px;top:-11px;width:22px;height:22px;border-radius:50%;background:#23201c;"></div>
+                  <div style="position:absolute;left:14px;right:14px;top:-1px;border-top:2px dashed #cdbfa8;"></div>
+                </div>
+                <!-- stub -->
+                <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:14px 18px 10px;color:#23201c;">
+                  <div style="display:flex;justify-content:space-between;align-items:baseline;">
+                    <div style="font-size:9px;font-weight:700;letter-spacing:.16em;color:#a89a86;">PASE Nº {{ topCard.year }}</div>
+                  </div>
+                  <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:25px;line-height:.96;letter-spacing:-.02em;margin:8px 0 4px;">{{ topCard.title }}</div>
+                  <div style="font-size:12px;color:#8a7f74;">{{ topCard.genre }} · {{ topCard.year }} · {{ topCard.director }}</div>
+                  <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:auto;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#bcae99;">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>Toca para ampliar
+                  </div>
+                </div>
+                <!-- expand-up info panel -->
+                <div style="{{ topCard.clipStyle }}">
+                  <div onPointerDown="{{ stop }}" style="{{ topCard.panelStyle }}">
+                    <div style="flex:none;display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding:16px 16px 10px;color:#23201c;">
+                      <div style="min-width:0;">
+                        <div style="font-size:9px;font-weight:700;letter-spacing:.16em;color:#a89a86;">PASE Nº {{ topCard.year }}</div>
+                        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:23px;line-height:.98;letter-spacing:-.02em;margin-top:5px;">{{ topCard.title }}</div>
+                      </div>
+                      <button onClick="{{ collapseTop }}" style="flex:none;width:30px;height:30px;border-radius:50%;border:none;background:rgba(35,32,28,.08);display:grid;place-items:center;cursor:pointer;color:#23201c;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+                    </div>
+                    <div class="fsScroll" style="flex:1;overflow-y:auto;padding:0 16px 16px;color:#23201c;">
+                      <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;">
+                        <div style="font-size:10px;font-weight:700;letter-spacing:.04em;padding:5px 10px;border-radius:999px;background:#23201c;color:#F4EFE7;">{{ topCard.genre }}</div>
+                        <div style="font-size:10px;font-weight:700;letter-spacing:.04em;padding:5px 10px;border-radius:999px;background:#ece5d7;color:#6b6258;">{{ topCard.runtime }} min</div>
+                        <div style="font-size:10px;font-weight:700;letter-spacing:.04em;padding:5px 10px;border-radius:999px;background:#ece5d7;color:#6b6258;">{{ topCard.decade }}</div>
+                        <div style="font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:#F4A124;color:#23201c;">{{ topCard.ratingLabel }}</div>
+                      </div>
+                      <div style="font-size:12px;font-weight:600;color:#a89a86;margin-bottom:7px;">Dirigida por {{ topCard.director }}</div>
+                      <p style="font-size:14px;line-height:1.55;color:#3a342e;margin:0;">{{ topCard.synopsis }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- stamps -->
+              <div style="{{ topCard.seenStampStyle }}">VISTA</div>
+              <div style="{{ topCard.skipStampStyle }}">NO</div>
+              <div style="{{ topCard.listStampStyle }}">PENDIENTE</div>
+            </div>
+            </sc-if>
+          </div>
+
+          <!-- action buttons -->
+          <sc-if value="{{ hasTop }}" hint-placeholder-val="{{ true }}">
+          <div style="flex:none;display:flex;align-items:center;justify-content:center;gap:14px;padding:6px 0 14px;">
+            <button onClick="{{ btnSkip }}" style="width:56px;height:56px;border-radius:50%;border:none;background:#F4EFE7;box-shadow:0 6px 16px -6px rgba(0,0,0,.6);color:#FF5A4D;display:grid;place-items:center;cursor:pointer;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+            <button onClick="{{ btnList }}" style="width:46px;height:46px;border-radius:50%;border:none;background:#F4A124;box-shadow:0 6px 16px -6px rgba(244,161,36,.7);color:#23201c;display:grid;place-items:center;cursor:pointer;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+            <button onClick="{{ btnSeen }}" style="width:56px;height:56px;border-radius:50%;border:none;background:#0FB5A4;box-shadow:0 6px 16px -6px rgba(15,181,164,.7);color:#fff;display:grid;place-items:center;cursor:pointer;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></button>
+          </div>
+          </sc-if>
+        </div>
+        </sc-if>
+
+        <!-- ============ CATALOG ============ -->
+        <sc-if value="{{ isCatalog }}" hint-placeholder-val="{{ false }}">
+        <div class="fsScroll" style="position:absolute;inset:0;overflow-y:auto;padding:4px 18px 16px;">
+          <div style="margin-bottom:11px;">
+            <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;">Mis entradas</div>
+            <div style="font-size:12px;color:rgba(244,239,231,.55);">{{ seenCount }} películas selladas</div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:15px;">
+            <button onClick="{{ cycleSort }}" style="flex:none;display:inline-flex;align-items:center;gap:6px;padding:8px 13px;border:1px solid rgba(244,239,231,.22);border-radius:999px;background:rgba(244,239,231,.06);color:#F4EFE7;font-family:inherit;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11"></path><path d="M3 12h7"></path><path d="M3 18h4"></path><path d="M18 8v9"></path><path d="M15 14l3 3 3-3"></path></svg>
+              {{ sortLabel }}
+            </button>
+            <div style="display:flex;gap:2px;padding:3px;border-radius:11px;background:rgba(244,239,231,.06);">
+              <button onClick="{{ setCatTicket }}" style="{{ catSegTicket }}"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="6" width="18" height="4.5" rx="1.4"/><rect x="3" y="13.5" width="18" height="4.5" rx="1.4"/></svg></button>
+              <button onClick="{{ setCat1 }}" style="{{ catSeg1 }}"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><rect x="7" y="3" width="10" height="18" rx="2"/></svg></button>
+              <button onClick="{{ setCat2 }}" style="{{ catSeg2 }}"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="8" height="18" rx="1.6"/><rect x="13" y="3" width="8" height="18" rx="1.6"/></svg></button>
+              <button onClick="{{ setCat3 }}" style="{{ catSeg3 }}"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="5" height="18" rx="1.2"/><rect x="9.5" y="3" width="5" height="18" rx="1.2"/><rect x="16" y="3" width="5" height="18" rx="1.2"/></svg></button>
+            </div>
+          </div>
+          <sc-if value="{{ seenEmpty }}" hint-placeholder-val="{{ false }}"><div style="padding:40px 10px;text-align:center;color:rgba(244,239,231,.5);font-size:13px;">Aún no has sellado ninguna entrada.</div></sc-if>
+          <sc-if value="{{ catIsTicket }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <sc-for list="{{ seenList }}" as="m" hint-placeholder-count="4">
+              <div onClick="{{ m.onClick }}" style="position:relative;display:flex;min-height:80px;background:#F4EFE7;border-radius:14px;overflow:hidden;box-shadow:0 8px 20px -12px rgba(0,0,0,.7);cursor:pointer;color:#23201c;">
+                <div style="width:54px;flex:none;background:{{ m.color }};"></div>
+                <div style="position:absolute;left:54px;top:8px;bottom:8px;border-left:2px dashed #cdbfa8;"></div>
+                <div style="position:absolute;left:54px;top:-7px;width:14px;height:14px;border-radius:50%;background:#23201c;transform:translateX(-50%);"></div>
+                <div style="position:absolute;left:54px;bottom:-7px;width:14px;height:14px;border-radius:50%;background:#23201c;transform:translateX(-50%);"></div>
+                <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:5px;padding:11px 13px 11px 18px;">
+                  <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;line-height:1.1;width:100%;">{{ m.title }}</div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+                    <div style="min-width:0;">
+                      <div style="font-size:8px;font-weight:700;letter-spacing:.14em;color:#a89a86;">{{ m.year }}</div>
+                      <div style="font-size:11px;color:#8a7f74;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ m.genre }} · {{ m.director }}</div>
+                    </div>
+                    <div style="flex:none;display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
+                      <div style="font-size:9px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#23201c;background:#F4A124;padding:3px 8px;border-radius:999px;white-space:nowrap;">{{ m.ratingLabel }}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+          </sc-if>
+          <sc-if value="{{ catIsGrid }}" hint-placeholder-val="{{ false }}">
+          <div style="{{ catGridStyle }}">
+            <sc-for list="{{ seenList }}" as="m" hint-placeholder-count="6">
+              <div onClick="{{ m.onClick }}" style="position:relative;cursor:pointer;">
+                <div style="position:relative;width:100%;aspect-ratio:2/3;border-radius:13px;overflow:hidden;box-shadow:0 12px 24px -14px rgba(0,0,0,.8),inset 0 0 0 1px rgba(0,0,0,.45);">
+                  <dc-import name="MoviePoster" caption="true" compact="{{ catCompact }}" title="{{ m.title }}" year="{{ m.year }}" genre="{{ m.genre }}" director="{{ m.director }}" rating="{{ m.rating }}" color="{{ m.color }}" text-color="{{ m.textColor }}" seed="{{ m.seed }}" radius="0" hint-size="100%,100%" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;"></dc-import>
+                </div>
+                <div style="position:absolute;left:-5px;top:48%;width:10px;height:10px;border-radius:50%;background:#23201c;"></div>
+                <div style="position:absolute;right:-5px;top:48%;width:10px;height:10px;border-radius:50%;background:#23201c;"></div>
+              </div>
+            </sc-for>
+          </div>
+          </sc-if>
+        </div>
+        </sc-if>
+
+        <!-- ============ PENDIENTES ============ -->
+        <sc-if value="{{ isList }}" hint-placeholder-val="{{ false }}">
+        <div class="fsScroll" style="position:absolute;inset:0;overflow-y:auto;padding:4px 18px 16px;">
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;">Próximas sesiones</div>
+          <div style="font-size:12px;color:rgba(244,239,231,.55);margin-bottom:12px;">{{ watchCount }} entradas reservadas</div>
+          <div style="display:flex;justify-content:flex-end;margin-bottom:15px;">
+            <div style="display:flex;gap:2px;padding:3px;border-radius:11px;background:rgba(244,239,231,.06);">
+              <button onClick="{{ setResTicket }}" style="{{ resSegTicket }}"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="6" width="18" height="4.5" rx="1.4"/><rect x="3" y="13.5" width="18" height="4.5" rx="1.4"/></svg></button>
+              <button onClick="{{ setRes1 }}" style="{{ resSeg1 }}"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><rect x="7" y="3" width="10" height="18" rx="2"/></svg></button>
+              <button onClick="{{ setRes2 }}" style="{{ resSeg2 }}"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="8" height="18" rx="1.6"/><rect x="13" y="3" width="8" height="18" rx="1.6"/></svg></button>
+              <button onClick="{{ setRes3 }}" style="{{ resSeg3 }}"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="5" height="18" rx="1.2"/><rect x="9.5" y="3" width="5" height="18" rx="1.2"/><rect x="16" y="3" width="5" height="18" rx="1.2"/></svg></button>
+            </div>
+          </div>
+          <sc-if value="{{ watchEmpty }}" hint-placeholder-val="{{ false }}"><div style="padding:40px 10px;text-align:center;color:rgba(244,239,231,.5);font-size:13px;">Desliza una entrada hacia arriba para reservarla aquí.</div></sc-if>
+          <sc-if value="{{ resIsTicket }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <sc-for list="{{ watchList }}" as="m" hint-placeholder-count="2">
+              <div style="position:relative;display:flex;align-items:stretch;min-height:80px;background:#F4EFE7;border-radius:14px;overflow:hidden;box-shadow:0 8px 20px -12px rgba(0,0,0,.7);color:#23201c;">
+                <div onClick="{{ m.onClick }}" style="width:54px;flex:none;background:{{ m.color }};cursor:pointer;"></div>
+                <div style="position:absolute;left:54px;top:8px;bottom:8px;border-left:2px dashed #cdbfa8;"></div>
+                <div onClick="{{ m.onClick }}" style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:5px;padding:11px 13px 11px 18px;cursor:pointer;">
+                  <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;line-height:1.1;width:100%;">{{ m.title }}</div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+                    <div style="min-width:0;">
+                      <div style="font-size:8px;font-weight:700;letter-spacing:.14em;color:#F4A124;">RESERVADA · {{ m.decade }}</div>
+                      <div style="font-size:11px;color:#8a7f74;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ m.genre }} · {{ m.year }}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+          </sc-if>
+          <sc-if value="{{ resIsGrid }}" hint-placeholder-val="{{ false }}">
+          <div style="{{ resGridStyle }}">
+            <sc-for list="{{ watchList }}" as="m" hint-placeholder-count="6">
+              <div onClick="{{ m.onClick }}" style="position:relative;cursor:pointer;">
+                <div style="position:relative;width:100%;aspect-ratio:2/3;border-radius:13px;overflow:hidden;box-shadow:0 12px 24px -14px rgba(0,0,0,.8),inset 0 0 0 1px rgba(0,0,0,.45);">
+                  <dc-import name="MoviePoster" caption="true" compact="{{ resCompact }}" title="{{ m.title }}" year="{{ m.year }}" genre="{{ m.genre }}" director="{{ m.director }}" rating="{{ m.rating }}" color="{{ m.color }}" text-color="{{ m.textColor }}" seed="{{ m.seed }}" radius="0" hint-size="100%,100%" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;"></dc-import>
+                  <div style="position:absolute;top:9px;left:9px;font-size:8px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#23201c;background:#F4A124;padding:3px 7px;border-radius:999px;">Reservada</div>
+                </div>
+                <div style="position:absolute;left:-5px;top:48%;width:10px;height:10px;border-radius:50%;background:#23201c;"></div>
+                <div style="position:absolute;right:-5px;top:48%;width:10px;height:10px;border-radius:50%;background:#23201c;"></div>
+              </div>
+            </sc-for>
+          </div>
+          </sc-if>
+        </div>
+        </sc-if>
+
+        <!-- ============ PERFIL ============ -->
+        <sc-if value="{{ isProfile }}" hint-placeholder-val="{{ false }}">
+        <div class="fsScroll" style="position:absolute;inset:0;overflow-y:auto;padding:4px 18px 16px;">
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;margin-bottom:14px;">Mi pase</div>
+
+          <!-- season pass hero ticket -->
+          <div style="position:relative;background:#F4A124;border-radius:18px;padding:18px 20px;color:#23201c;box-shadow:0 16px 34px -16px rgba(244,161,36,.8);overflow:hidden;">
+            <div style="position:absolute;inset:0;opacity:.14;background:repeating-linear-gradient(48deg,#23201c 0 2px,transparent 2px 12px);pointer-events:none;"></div>
+            <div style="position:relative;z-index:1;">
+              <div style="font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;opacity:.7;">Pase de temporada</div>
+              <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:30px;line-height:1;margin:4px 0 12px;">{{ levelName }}</div>
+              <div style="height:8px;border-radius:999px;background:rgba(35,32,28,.18);overflow:hidden;"><div style="{{ levelBarStyle }}"></div></div>
+              <div style="font-size:12px;margin-top:8px;font-weight:600;opacity:.8;">{{ statsSeen }} vistas · {{ statsHours }} h en la butaca</div>
+            </div>
+            <div style="position:absolute;left:-9px;top:50%;transform:translateY(-50%);width:18px;height:18px;border-radius:50%;background:#23201c;"></div>
+            <div style="position:absolute;right:-9px;top:50%;transform:translateY(-50%);width:18px;height:18px;border-radius:50%;background:#23201c;"></div>
+          </div>
+
+          <!-- stat stubs -->
+          <div style="display:flex;gap:9px;margin-top:12px;">
+            <div style="flex:1;background:#F4EFE7;border-radius:12px;padding:13px;color:#23201c;text-align:center;"><div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;">{{ statsSeen }}</div><div style="font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#a89a86;">vistas</div></div>
+            <div style="flex:1;background:#F4EFE7;border-radius:12px;padding:13px;color:#23201c;text-align:center;"><div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;">{{ statsList }}</div><div style="font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#a89a86;">reservas</div></div>
+            <div style="flex:1;background:#F4EFE7;border-radius:12px;padding:13px;color:#23201c;text-align:center;"><div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;">{{ statsHours }}</div><div style="font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#a89a86;">horas</div></div>
+          </div>
+
+          <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,239,231,.5);margin:20px 0 11px;">Por década</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <sc-for list="{{ decadeStats }}" as="d" hint-placeholder-count="3">
+              <div style="display:flex;align-items:center;gap:12px;">
+                <div style="width:38px;font-weight:700;font-size:13px;flex:none;">{{ d.label }}</div>
+                <div style="flex:1;height:14px;border-radius:999px;background:#312b24;overflow:hidden;"><div style="{{ d.barStyle }}"></div></div>
+                <div style="width:20px;text-align:right;font-size:12px;font-weight:700;color:rgba(244,239,231,.7);flex:none;">{{ d.count }}</div>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,239,231,.5);margin:20px 0 11px;">Géneros favoritos</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <sc-for list="{{ genreStats }}" as="g" hint-placeholder-count="4">
+              <div style="{{ g.chipStyle }}">{{ g.label }} · {{ g.count }}</div>
+            </sc-for>
+          </div>
+        </div>
+        </sc-if>
+
+      </div>
+
+      <!-- bottom nav -->
+      <div style="flex:none;height:60px;display:flex;align-items:stretch;background:#1b1814;border-top:1px solid #353029;position:relative;z-index:2;">
+        <button onClick="{{ navSwipe }}" style="flex:1;border:none;background:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;cursor:pointer;color:{{ navSwipeColor }};font-family:inherit;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="16" rx="2"/><path d="M3 8v8"/></svg>
+          <span style="font-size:10px;font-weight:600;">Cartelera</span>
+        </button>
+        <button onClick="{{ navCatalog }}" style="flex:1;border:none;background:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;cursor:pointer;color:{{ navCatalogColor }};font-family:inherit;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="7" height="16" rx="1.5"/><rect x="14" y="4" width="7" height="16" rx="1.5"/></svg>
+          <span style="font-size:10px;font-weight:600;">Entradas</span>
+        </button>
+        <button onClick="{{ navList }}" style="flex:1;border:none;background:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;cursor:pointer;color:{{ navListColor }};font-family:inherit;position:relative;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12v16l-6-4-6 4z"/></svg>
+          <span style="font-size:10px;font-weight:600;">Reservas</span>
+        </button>
+        <button onClick="{{ navProfile }}" style="flex:1;border:none;background:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;cursor:pointer;color:{{ navProfileColor }};font-family:inherit;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.5 3-6 7-6s7 2.5 7 6"/></svg>
+          <span style="font-size:10px;font-weight:600;">Pase</span>
+        </button>
+      </div>
+
+      <!-- TOAST -->
+      <sc-if value="{{ toast }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;left:50%;bottom:76px;transform:translateX(-50%);z-index:40;padding:10px 18px;border-radius:999px;background:#F4A124;color:#23201c;font-size:13px;font-weight:700;box-shadow:0 8px 20px -6px rgba(0,0,0,.5);white-space:nowrap;animation:fsToast .25s ease;">{{ toast }}</div>
+      </sc-if>
+
+      <!-- ============ DETAIL ============ -->
+      <sc-if value="{{ hasDetail }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute;inset:0;z-index:50;background:#23201c;display:flex;flex-direction:column;">
+        <div class="fsScroll" style="flex:1;overflow-y:auto;padding:42px 18px 18px;">
+          <div style="position:relative;background:#F4EFE7;border-radius:18px;box-shadow:0 24px 50px -18px rgba(0,0,0,.8);color:#23201c;overflow:visible;">
+            <div style="position:relative;height:230px;border-radius:18px 18px 0 0;overflow:hidden;">
+              <dc-import name="MoviePoster" art="true" caption="false" title="{{ detail.title }}" year="{{ detail.year }}" genre="{{ detail.genre }}" director="{{ detail.director }}" rating="{{ detail.rating }}" color="{{ detail.color }}" text-color="{{ detail.textColor }}" seed="{{ detail.seed }}" radius="0" hint-size="100%,100%" style="width:100%;height:100%;"></dc-import>
+              <div style="position:absolute;top:12px;left:13px;font-size:9px;font-weight:800;letter-spacing:.16em;color:rgba(255,255,255,.9);">FILMSWIPE · ENTRADA</div>
+              <sc-if value="{{ detail.statusLabel }}" hint-placeholder-val="{{ false }}"><div style="{{ detail.statusStyle }}">{{ detail.statusLabel }}</div></sc-if>
+            </div>
+            <div style="position:relative;height:0;">
+              <div style="position:absolute;left:-11px;top:-11px;width:22px;height:22px;border-radius:50%;background:#23201c;"></div>
+              <div style="position:absolute;right:-11px;top:-11px;width:22px;height:22px;border-radius:50%;background:#23201c;"></div>
+              <div style="position:absolute;left:14px;right:14px;top:-1px;border-top:2px dashed #cdbfa8;"></div>
+            </div>
+            <div style="padding:16px 18px 18px;">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;">
+                <div style="font-size:9px;font-weight:700;letter-spacing:.16em;color:#a89a86;">PASE Nº {{ detail.year }}</div>
+                <div style="font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#23201c;background:#F4A124;padding:4px 11px;border-radius:999px;white-space:nowrap;">{{ detail.ratingLabel }}</div>
+              </div>
+              <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:28px;line-height:.98;letter-spacing:-.02em;margin:8px 0 10px;">{{ detail.title }}</div>
+              <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:13px;">
+                <div style="font-size:10px;font-weight:700;letter-spacing:.04em;padding:5px 10px;border-radius:999px;background:#23201c;color:#F4EFE7;">{{ detail.genre }}</div>
+                <div style="font-size:10px;font-weight:700;letter-spacing:.04em;padding:5px 10px;border-radius:999px;background:#ece5d7;color:#6b6258;">{{ detail.runtime }} min</div>
+                <div style="font-size:10px;font-weight:700;letter-spacing:.04em;padding:5px 10px;border-radius:999px;background:#ece5d7;color:#6b6258;">{{ detail.decade }}</div>
+              </div>
+              <div style="font-size:12px;font-weight:600;color:#a89a86;margin-bottom:5px;">Dirigida por {{ detail.director }}</div>
+              <p style="font-size:14px;line-height:1.55;color:#3a342e;margin:0 0 16px;">{{ detail.synopsis }}</p>
+              <div style="border-top:1px dashed #d8cdb8;margin:0 0 14px;"></div>
+              <div style="display:flex;gap:10px;">
+                <button onClick="{{ detailSeen }}" style="flex:1;padding:14px;border:none;border-radius:12px;background:#0FB5A4;color:#fff;font-family:inherit;font-weight:700;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>La he visto</button>
+                <button onClick="{{ detailList }}" style="flex:none;padding:14px 16px;border:none;border-radius:12px;background:#F4A124;color:#23201c;font-family:inherit;font-weight:700;font-size:14px;cursor:pointer;display:grid;place-items:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button onClick="{{ closeDetail }}" style="position:absolute;top:48px;left:22px;width:36px;height:36px;border-radius:50%;border:none;background:rgba(35,32,28,.55);backdrop-filter:blur(4px);color:#F4EFE7;display:grid;place-items:center;cursor:pointer;z-index:5;box-shadow:0 4px 12px -4px rgba(0,0,0,.6);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M15 6l-9 6 9 6"/></svg></button>
+      </div>
+      </sc-if>
+
+      <!-- ============ SEARCH ============ -->
+      <sc-if value="{{ searchOpen }}" hint-placeholder-val="{{ false }}">
+      <div style="position:absolute;inset:0;z-index:58;background:#23201c;display:flex;flex-direction:column;">
+        <div style="position:absolute;inset:0;opacity:.05;background:repeating-linear-gradient(0deg,#000 0 2px,transparent 2px 6px);pointer-events:none;"></div>
+        <div style="flex:none;padding:46px 16px 12px;display:flex;align-items:center;gap:10px;position:relative;z-index:2;">
+          <div style="flex:1;display:flex;align-items:center;gap:9px;background:#F4EFE7;border-radius:13px;padding:11px 13px;color:#23201c;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#a89a86" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.6-4.6"/></svg>
+            <input value="{{ query }}" onChange="{{ onSearchInput }}" placeholder="Busca una película..." autoFocus="{{ true }}" style="flex:1;min-width:0;border:none;outline:none;background:none;font-family:inherit;font-size:15px;font-weight:600;color:#23201c;" />
+            <sc-if value="{{ hasQuery }}" hint-placeholder-val="{{ false }}"><button onClick="{{ clearSearch }}" style="flex:none;width:22px;height:22px;border-radius:50%;border:none;background:#e4dccd;color:#6b6258;display:grid;place-items:center;font-size:14px;line-height:1;cursor:pointer;">×</button></sc-if>
+          </div>
+          <button onClick="{{ closeSearch }}" style="flex:none;border:none;background:none;color:#F4A124;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;">Cancelar</button>
+        </div>
+        <div class="fsScroll" style="flex:1;overflow-y:auto;padding:4px 16px 16px;position:relative;z-index:2;">
+          <sc-if value="{{ searchEmpty }}" hint-placeholder-val="{{ true }}">
+            <div style="padding:34px 14px;text-align:center;color:rgba(244,239,231,.5);font-size:13px;line-height:1.5;">Escribe el nombre de una película.<br/>Aunque la escribas con erratas, te sugeriremos las más parecidas.</div>
+          </sc-if>
+          <sc-if value="{{ searchNoResults }}" hint-placeholder-val="{{ false }}">
+            <div style="padding:34px 14px;text-align:center;color:rgba(244,239,231,.5);font-size:13px;">Sin coincidencias para «{{ query }}».</div>
+          </sc-if>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <sc-for list="{{ searchResults }}" as="m" hint-placeholder-count="3">
+              <div onClick="{{ m.onClick }}" style="position:relative;display:flex;min-height:62px;background:#F4EFE7;border-radius:13px;overflow:hidden;box-shadow:0 8px 20px -12px rgba(0,0,0,.7);cursor:pointer;color:#23201c;">
+                <div style="width:46px;flex:none;background:{{ m.color }};"></div>
+                <div style="flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:3px;padding:9px 13px;">
+                  <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;line-height:1.05;">{{ m.title }}</div>
+                  <div style="font-size:11px;color:#8a7f74;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ m.genre }} · {{ m.year }} · {{ m.director }}</div>
+                </div>
+                <sc-if value="{{ m.statusLabel }}" hint-placeholder-val="{{ false }}"><div style="{{ m.statusStyle }}">{{ m.statusLabel }}</div></sc-if>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+      </sc-if>
+
+      <!-- ============ FILTERS ============ -->
+      <sc-if value="{{ filtersOpen }}" hint-placeholder-val="{{ false }}">
+      <div onClick="{{ closeFilters }}" style="position:absolute;inset:0;z-index:55;background:rgba(10,8,6,.6);display:flex;align-items:flex-end;">
+        <div onClick="{{ stop }}" style="width:100%;background:#F4EFE7;border-radius:26px 26px 0 0;padding:18px 20px 24px;box-shadow:0 -10px 30px -10px rgba(0,0,0,.5);color:#23201c;">
+          <div style="width:40px;height:4px;border-radius:999px;background:#d8cfc2;margin:0 auto 16px;"></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+            <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;">Filtrar cartelera</div>
+            <button onClick="{{ clearFilters }}" style="border:none;background:none;color:#8a7f74;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;text-decoration:underline;">Limpiar</button>
+          </div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#a89a86;margin-bottom:9px;">Década</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+            <sc-for list="{{ decadeChips }}" as="ch" hint-placeholder-count="3"><button onClick="{{ ch.onToggle }}" style="{{ ch.style }}">{{ ch.label }}</button></sc-for>
+          </div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#a89a86;margin-bottom:9px;">Género</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
+            <sc-for list="{{ genreChips }}" as="ch" hint-placeholder-count="6"><button onClick="{{ ch.onToggle }}" style="{{ ch.style }}">{{ ch.label }}</button></sc-for>
+          </div>
+          <div style="display:flex;align-items:center;gap:7px;margin-bottom:9px;"><div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#a89a86;">Origen</div><div style="font-size:9px;font-weight:700;color:#06302c;background:#0FB5A4;padding:2px 7px;border-radius:999px;">Hollywood o mundo</div></div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;">
+            <sc-for list="{{ regionChips }}" as="ch" hint-placeholder-count="6"><button onClick="{{ ch.onToggle }}" style="{{ ch.style }}">{{ ch.label }}</button></sc-for>
+          </div>
+          <button onClick="{{ closeFilters }}" style="width:100%;padding:14px;border:none;border-radius:12px;background:#23201c;color:#F4EFE7;font-family:inherit;font-weight:700;font-size:14px;cursor:pointer;">Ver {{ remaining }} entradas</button>
+        </div>
+      </div>
+      </sc-if>
+
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:404,&quot;height&quot;:772}}">
+class Component extends DCLogic {
+  M = [
+    ["Pulp Fiction","1994","Crimen","Tarantino","4.8",154,"#FF5A4D","#ffffff","Las historias de unos gánsteres, un boxeador y un misterioso maletín se entrelazan en Los Ángeles.","Hollywood"],
+    ["El Club de la Lucha","1999","Drama","Fincher","4.7",139,"#262626","#ffffff","Un oficinista insomne funda con un carismático extraño un club clandestino que se le va de las manos.","Hollywood"],
+    ["Titanic","1997","Romance","Cameron","4.3",195,"#2EC4B6","#06302c","Un amor imposible entre dos jóvenes de clases opuestas a bordo del barco más famoso de la historia.","Hollywood"],
+    ["Matrix","1999","Sci-Fi","Wachowski","4.7",136,"#12B886","#04261c","Un hacker descubre que la realidad que conoce es en verdad una simulación controlada por máquinas.","Hollywood"],
+    ["Parque Jurásico","1993","Aventura","Spielberg","4.5",127,"#F4A124","#2a1700","Un parque temático de dinosaurios clonados se convierte en una trampa mortal cuando todo falla.","Hollywood"],
+    ["El Rey León","1994","Animación","Allers","4.6",88,"#FF8A3D","#2a1400","Un joven león debe superar la pérdida y reclamar su lugar legítimo al frente de la sabana.","Hollywood"],
+    ["Toy Story","1995","Animación","Lasseter","4.5",81,"#3B82F6","#ffffff","Los juguetes cobran vida cuando los humanos no miran, y dos rivales aprenden a ser amigos.","Hollywood"],
+    ["Forrest Gump","1994","Drama","Zemeckis","4.6",142,"#59C36A","#06280f","Un hombre de gran corazón y mente sencilla atraviesa, sin proponérselo, décadas de historia americana.","Hollywood"],
+    ["Uno de los Nuestros","1990","Crimen","Scorsese","4.7",145,"#B23A48","#ffffff","El ascenso y la caída de un joven que entrega su vida entera a la mafia neoyorquina.","Hollywood"],
+    ["El Silencio de los Corderos","1991","Thriller","Demme","4.6",118,"#6D4C7D","#ffffff","Una novata del FBI busca la ayuda de un brillante asesino encarcelado para atrapar a otro en libertad.","Hollywood"],
+    ["Terminator 2","1991","Acción","Cameron","4.5",137,"#2C5BAA","#ffffff","Una máquina viaja desde el futuro para proteger al niño que un día liderará a la humanidad.","Hollywood"],
+    ["La Lista de Schindler","1993","Drama","Spielberg","4.8",195,"#595959","#ffffff","Un empresario arriesga todo para salvar a cientos de trabajadores durante la ocupación nazi.","Hollywood"],
+    ["Seven","1995","Thriller","Fincher","4.6",127,"#1F3D2B","#ffffff","Dos detectives persiguen a un asesino que comete sus crímenes inspirándose en los pecados capitales.","Hollywood"],
+    ["Trainspotting","1996","Drama","Boyle","4.4",94,"#FF6F3C","#2a1100","Un grupo de amigos en Edimburgo sobrevive entre la adicción, la amistad y el deseo de escapar.","Europa"],
+    ["El Gran Lebowski","1998","Comedia","Coen","4.4",117,"#E8B53A","#2a2000","Una confusión de identidades arrastra a un despreocupado holgazán a un absurdo enredo criminal.","Hollywood"],
+    ["Heat","1995","Crimen","Mann","4.5",170,"#B91C1C","#ffffff","Un detective obsesivo y un ladrón metódico se persiguen mutuamente en una Los Ángeles tensa.","Hollywood"],
+    ["Regreso al Futuro","1985","Sci-Fi","Zemeckis","4.7",116,"#7B61FF","#ffffff","Un adolescente viaja accidentalmente al pasado en un coche modificado y altera la historia familiar.","Hollywood"],
+    ["El Resplandor","1980","Terror","Kubrick","4.6",146,"#C0392B","#ffffff","Una familia cuida un hotel aislado en invierno donde una presencia siniestra empieza a acechar.","Hollywood"],
+    ["Gladiator","2000","Acción","Scott","4.5",155,"#8B5E34","#ffffff","Un general romano traicionado y esclavizado busca vengarse del emperador desde la arena del circo.","Hollywood"],
+    ["Amélie","2001","Romance","Jeunet","4.6",122,"#E84393","#ffffff","Una joven soñadora de París decide cambiar en secreto, y para mejor, la vida de quienes la rodean.","Europa"],
+    ["Oldboy","2003","Thriller","Park Chan-wook","4.6",120,"#6D4C7D","#ffffff","Un hombre encerrado durante quince años sin explicación es liberado de golpe y busca a su captor.","Asia"],
+    ["Parásitos","2019","Thriller","Bong Joon-ho","4.7",132,"#1F3D2B","#ffffff","Una familia humilde se infiltra poco a poco en el hogar de una adinerada con consecuencias imprevisibles.","Asia"],
+    ["El Viaje de Chihiro","2001","Animación","Miyazaki","4.8",125,"#5FA9D1","#06293a","Una niña queda atrapada en un mundo de espíritus y debe trabajar para liberar a sus padres hechizados.","Asia"],
+    ["Tigre y Dragón","2000","Acción","Ang Lee","4.3",120,"#1E6E5C","#ffffff","Dos guerreros persiguen una espada legendaria robada mientras callan un amor imposible.","Asia"],
+    ["Ciudad de Dios","2002","Crimen","Meirelles","4.7",130,"#E8843A","#2a1500","Dos chicos crecen en una favela de Río donde uno empuña la cámara y el otro empuña las armas.","Latinoamérica"],
+    ["El Laberinto del Fauno","2006","Drama","del Toro","4.6",118,"#3A5134","#ffffff","Una niña escapa de la dura España de posguerra hacia un mundo de fauno, hadas y pruebas oscuras.","Latinoamérica"],
+    ["Amores Perros","2000","Drama","Iñárritu","4.5",154,"#B23A2E","#ffffff","Un brutal accidente de coche en Ciudad de México entrelaza tres vidas marcadas por el amor y la pérdida.","Latinoamérica"],
+    ["Relatos Salvajes","2014","Comedia","Szifrón","4.4",122,"#C42E2E","#ffffff","Seis historias independientes llevan a gente común hasta el límite donde estalla la venganza.","Latinoamérica"],
+    ["La Vida de los Otros","2006","Drama","Donnersmarck","4.7",137,"#5A6470","#ffffff","Un agente de la Stasi que vigila a un dramaturgo en la RDA empieza a dudar de su propia misión.","Europa"],
+    ["Cinema Paradiso","1988","Drama","Tornatore","4.6",155,"#C7892F","#2a1c00","Un cineasta recuerda su infancia en un pueblo siciliano junto al proyeccionista que le enseñó a amar el cine.","Europa"],
+    ["Timbuktu","2014","Drama","Sissako","4.2",96,"#D9A441","#2a1d00","La vida de una familia de pastores se quiebra cuando unos yihadistas imponen su ley en la ciudad.","África"],
+    ["Tsotsi","2005","Drama","Gavin Hood","4.1",94,"#C05A2A","#ffffff","Un joven pandillero de Johannesburgo roba un coche y descubre un bebé en el asiento trasero.","África"],
+    ["The Babadook","2014","Terror","Jennifer Kent","4.0",94,"#2A2A30","#ffffff","Una madre viuda y su hijo son acechados por la criatura de un siniestro libro infantil.","Oceanía"],
+    ["Lo que Hacemos en las Sombras","2014","Comedia","Waititi","4.3",86,"#3B2F52","#ffffff","Cuatro vampiros comparten piso en Wellington y lidian con tareas domésticas y rencillas de siglos.","Oceanía"]
+  ];
+
+  state = (() => {
+    const seedSeen = [4,5,6,16];
+    const seedList = [2,9];
+    const order = this.M.map((_,i)=>i).filter(i=>seedSeen.indexOf(i)<0 && seedList.indexOf(i)<0);
+    return { view:'swipe', onboarded:false, order, seen:seedSeen.slice(), watchlist:seedList.slice(), skipped:[],
+             drag:null, fly:null, flyActive:false, detail:null, expanded:false, filtersOpen:false, decades:[], genres:[], regions:[], toast:null,
+             searchOpen:false, query:'', seenSort:'recent', catLayout:'ticket', resLayout:'ticket' };
+  })();
+
+  ratingLabelOf(r){
+    const v=+r;
+    if(v>=4.7) return 'Obra de arte';
+    if(v>=4.4) return 'Buenísima';
+    if(v>=3.5) return 'Buena';
+    if(v>=2.5) return 'Sin más';
+    if(v>=1.5) return 'Mala';
+    return 'Penosa';
+  }
+  mv(i){
+    const a=this.M[i];
+    return {idx:i,title:a[0],year:a[1],genre:a[2],director:a[3],rating:a[4],runtime:a[5],color:a[6],textColor:a[7],synopsis:a[8],
+      seed:i, region:a[9], ratingLabel:this.ratingLabelOf(a[4])};
+  }
+  decadeOf(i){ const y=+this.M[i][1]; return (Math.floor(y/10)*10)+"s"; }
+  cycleSort(){ const o=['recent','title','year','rating']; const i=o.indexOf(this.state.seenSort||'recent'); this.setState({seenSort:o[(i+1)%o.length]}); }
+
+  visibleOrder(){
+    const {order,decades,genres,regions}=this.state;
+    return order.filter(i=>(decades.length===0||decades.indexOf(this.decadeOf(i))>=0)&&(genres.length===0||genres.indexOf(this.M[i][2])>=0)&&(regions.length===0||regions.indexOf(this.M[i][9])>=0));
+  }
+
+  clamp(v,a,b){ return Math.max(a,Math.min(b,v)); }
+
+  onDown(e){
+    if(this.state.fly||this.state.detail!=null) return;
+    this.dragActive=true; this.startX=e.clientX; this.startY=e.clientY;
+    this._move=this.onMove.bind(this); this._up=this.onUp.bind(this);
+    window.addEventListener('pointermove',this._move);
+    window.addEventListener('pointerup',this._up);
+  }
+  onMove(e){ if(!this.dragActive||this.state.expanded) return; this.setState({drag:{x:e.clientX-this.startX,y:e.clientY-this.startY}}); }
+  onUp(){
+    window.removeEventListener('pointermove',this._move);
+    window.removeEventListener('pointerup',this._up);
+    this.dragActive=false;
+    const d=this.state.drag||{x:0,y:0}; const TH=92;
+    if(Math.abs(d.x)<8 && Math.abs(d.y)<8){ this.setState({drag:null,expanded:!this.state.expanded}); return; }
+    if(this.state.expanded){ this.setState({drag:null}); return; }
+    if(d.y<-TH && Math.abs(d.y)>Math.abs(d.x)) this.commit('up');
+    else if(d.x>TH) this.commit('right');
+    else if(d.x<-TH) this.commit('left');
+    else this.setState({drag:null});
+  }
+  collapseTop(){ this.setState({expanded:false}); }
+
+  commit(dir){
+    const vis=this.visibleOrder(); const top=vis[0]; if(top==null) return;
+    const d=this.state.drag||{x:0,y:0};
+    const seen=this.state.seen.slice(), watch=this.state.watchlist.slice(), skip=this.state.skipped.slice();
+    let toast;
+    if(dir==='right'){ seen.push(top); toast='✓ Entrada sellada'; }
+    else if(dir==='up'){ watch.push(top); toast='↑ Reservada'; }
+    else { skip.push(top); toast='Saltada'; }
+    const order=this.state.order.filter(i=>i!==top);
+    this.dragActive=false;
+    this.setState({order,seen,watchlist:watch,skipped:skip,drag:null,expanded:false,fly:{idx:top,dir,startX:d.x,startY:d.y},flyActive:false,toast});
+    setTimeout(()=>{ if(this.state.fly) this.setState({flyActive:true}); },20);
+    setTimeout(()=>{ this.setState({fly:null,flyActive:false}); },400);
+    this._toastT && clearTimeout(this._toastT);
+    this._toastT=setTimeout(()=>this.setState({toast:null}),1500);
+  }
+
+  openDetail(i){ this.setState({detail:i}); }
+  closeDetail(){ this.setState({detail:null}); }
+  detailSeen(){
+    const i=this.state.detail; if(i==null) return;
+    const seen=this.state.seen.indexOf(i)<0?this.state.seen.concat(i):this.state.seen;
+    this.setState({seen,watchlist:this.state.watchlist.filter(x=>x!==i),order:this.state.order.filter(x=>x!==i),detail:null,toast:'✓ Entrada sellada'});
+    this._toastT && clearTimeout(this._toastT); this._toastT=setTimeout(()=>this.setState({toast:null}),1500);
+  }
+  detailList(){
+    const i=this.state.detail; if(i==null) return;
+    const watch=this.state.watchlist.indexOf(i)<0?this.state.watchlist.concat(i):this.state.watchlist;
+    this.setState({watchlist:watch,order:this.state.order.filter(x=>x!==i),detail:null,toast:'↑ Reservada'});
+    this._toastT && clearTimeout(this._toastT); this._toastT=setTimeout(()=>this.setState({toast:null}),1500);
+  }
+  markSeenFromList(i){
+    this.setState({seen:this.state.seen.concat(i),watchlist:this.state.watchlist.filter(x=>x!==i),toast:'✓ Entrada sellada'});
+    this._toastT && clearTimeout(this._toastT); this._toastT=setTimeout(()=>this.setState({toast:null}),1500);
+  }
+
+  toggleDecade(d){ const a=this.state.decades; this.setState({decades:a.indexOf(d)>=0?a.filter(x=>x!==d):a.concat(d)}); }
+  toggleGenre(g){ const a=this.state.genres; this.setState({genres:a.indexOf(g)>=0?a.filter(x=>x!==g):a.concat(g)}); }
+  toggleRegion(r){ const a=this.state.regions; this.setState({regions:a.indexOf(r)>=0?a.filter(x=>x!==r):a.concat(r)}); }
+
+  // ---- intelligent (typo-tolerant) search ----
+  lev(a,b){
+    const m=a.length,n=b.length;
+    if(!m) return n; if(!n) return m;
+    let prev=Array.from({length:n+1},(_,i)=>i);
+    for(let i=1;i<=m;i++){
+      const cur=[i];
+      for(let j=1;j<=n;j++){
+        const c=a[i-1]===b[j-1]?0:1;
+        cur[j]=Math.min(prev[j]+1,cur[j-1]+1,prev[j-1]+c);
+      }
+      prev=cur;
+    }
+    return prev[n];
+  }
+  norm(s){ return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
+  // best edit distance between query and any same-length-ish window of the title
+  bestWindowDist(q,t){
+    if(t.length<=q.length+1) return this.lev(q,t);
+    let best=Infinity;
+    for(let L=Math.max(1,q.length-1); L<=q.length+2 && L<=t.length; L++){
+      for(let s=0;s+L<=t.length;s++){
+        best=Math.min(best,this.lev(q,t.substr(s,L)));
+        if(best===0) return 0;
+      }
+    }
+    return best;
+  }
+  fuzzyScore(rawQ,rawTitle){
+    const q=this.norm(rawQ).trim(); const t=this.norm(rawTitle);
+    if(!q) return 0;
+    if(t.indexOf(q)>=0) return 1000 - t.indexOf(q);            // direct substring
+    const words=t.split(/\s+/);
+    for(const w of words){ if(w.indexOf(q)===0) return 900; }  // word prefix
+    const d=this.bestWindowDist(q,t);                          // typo tolerance
+    const ratio=1 - d/Math.max(1,q.length);
+    return ratio*700;
+  }
+  openSearch(){ this.setState({searchOpen:true}); }
+  closeSearch(){ this.setState({searchOpen:false,query:''}); }
+  clearSearch(){ this.setState({query:''}); }
+  onSearchInput(e){ this.setState({query:e.target.value}); }
+  pickSearch(i){ this.setState({searchOpen:false,query:'',detail:i}); }
+
+  renderVals(){
+    const S=this.state;
+    const vis=this.visibleOrder();
+    const top=vis[0];
+    const drag=S.drag||{x:0,y:0};
+
+    let liveStyle='position:absolute;inset:0;z-index:6;cursor:grab;touch-action:none;will-change:transform;';
+    if(this.dragActive && S.drag){
+      const rot=this.clamp(drag.x/16,-14,14);
+      liveStyle+=`transition:none;transform:translate(${drag.x}px,${drag.y}px) rotate(${rot}deg);`;
+    } else {
+      liveStyle+='transition:transform .32s cubic-bezier(.2,.85,.25,1);transform:translate(0,0) rotate(0deg);';
+    }
+    const seenOp=drag.x>0?this.clamp(drag.x/90,0,1):0;
+    const skipOp=drag.x<0?this.clamp(-drag.x/90,0,1):0;
+    const listOp=drag.y<0?this.clamp(-drag.y/90,0,1):0;
+    const stampBase='position:absolute;font-family:Bricolage Grotesque,sans-serif;font-weight:800;font-size:26px;letter-spacing:.06em;padding:7px 14px;border-radius:10px;z-index:9;pointer-events:none;background:rgba(244,239,231,.78);';
+
+    const topM=top!=null?this.mv(top):null;
+    const exp=S.expanded;
+    const topCard=topM?Object.assign({},topM,{
+      liveStyle,
+      decade:this.decadeOf(top),
+      clipStyle:`position:absolute;inset:0;z-index:8;border-radius:18px;overflow:hidden;pointer-events:${exp?'auto':'none'};`,
+      panelStyle:`position:absolute;inset:0;background:#F4EFE7;display:flex;flex-direction:column;transition:transform .42s cubic-bezier(.2,.85,.25,1);transform:translateY(${exp?'0%':'100%'});box-shadow:0 -12px 30px -14px rgba(0,0,0,.35);`,
+      seenStampStyle:stampBase+`top:18px;left:16px;color:#0FB5A4;box-shadow:inset 0 0 0 3px #0FB5A4;transform:rotate(-13deg);opacity:${seenOp};`,
+      skipStampStyle:stampBase+`top:18px;right:16px;color:#FF5A4D;box-shadow:inset 0 0 0 3px #FF5A4D;transform:rotate(13deg);opacity:${skipOp};`,
+      listStampStyle:stampBase+`top:24px;left:50%;margin-left:-66px;color:#F4A124;box-shadow:inset 0 0 0 3px #F4A124;transform:rotate(-4deg);opacity:${listOp};`,
+    }):null;
+
+    const bgCards=[];
+    [[vis[1],1],[vis[2],2]].forEach(([idx,depth])=>{
+      if(idx==null) return;
+      const m=this.mv(idx);
+      const scale=depth===1?0.95:0.90;
+      const ty=depth===1?12:24;
+      bgCards.push({color:m.color,
+        layerStyle:`position:absolute;inset:0;z-index:${5-depth};transform:scale(${scale}) translateY(${ty}px);transition:transform .3s ease;`});
+    });
+
+    let flyingCard=null;
+    if(S.fly){
+      const m=this.mv(S.fly.idx); const a=S.flyActive;
+      let tx=S.fly.startX||0, ty=S.fly.startY||0, rot=this.clamp((S.fly.startX||0)/16,-14,14), op=1;
+      if(a){
+        if(S.fly.dir==='right'){tx=520;ty=-30;rot=24;op=0;}
+        else if(S.fly.dir==='left'){tx=-520;ty=-30;rot=-24;op=0;}
+        else {tx=0;ty=-760;rot=0;op=0;}
+      }
+      flyingCard=React.createElement('div',{style:{position:'absolute',inset:0,zIndex:20,pointerEvents:'none',
+        transform:`translate(${tx}px,${ty}px) rotate(${rot}deg)`,opacity:op,
+        transition:a?'transform .4s cubic-bezier(.4,0,.6,1),opacity .4s ease':'none',
+        borderRadius:'18px',overflow:'hidden',background:'#F4EFE7',color:'#23201c',
+        boxShadow:'0 24px 50px -18px rgba(0,0,0,.8)',display:'flex',flexDirection:'column'}},
+        React.createElement('div',{style:{height:'58%',background:m.color}}),
+        React.createElement('div',{style:{flex:1,padding:'14px 18px',display:'flex',flexDirection:'column',justifyContent:'center'}},
+          React.createElement('div',{style:{fontFamily:'Bricolage Grotesque,sans-serif',fontWeight:800,fontSize:'24px',lineHeight:'.96',letterSpacing:'-.02em'}},m.title))
+      );
+    }
+
+    const mkRow=(i)=>{ const m=this.mv(i); return Object.assign({},m,{decade:this.decadeOf(i),
+      onClick:()=>this.openDetail(i), onSeen:()=>this.markSeenFromList(i)}); };
+    const sortLabels={recent:'Recientes',title:'Título A–Z',year:'Año ↓',rating:'Valoración ↓'};
+    const sortMode=S.seenSort||'recent';
+    let seenIdx=S.seen.slice().reverse();
+    if(sortMode==='title') seenIdx.sort((a,b)=>String(this.M[a][0]).localeCompare(String(this.M[b][0]),'es'));
+    else if(sortMode==='year') seenIdx.sort((a,b)=>(+this.M[b][1])-(+this.M[a][1]));
+    else if(sortMode==='rating') seenIdx.sort((a,b)=>(+this.M[b][4])-(+this.M[a][4]));
+    const seenList=seenIdx.map(mkRow);
+    const sortLabel=sortLabels[sortMode];
+    const watchList=S.watchlist.slice().reverse().map(mkRow);
+
+    const statsSeen=S.seen.length;
+    const statsHours=Math.round(S.seen.reduce((s,i)=>s+this.M[i][5],0)/60);
+    const decCount={};
+    S.seen.forEach(i=>{ const d=this.decadeOf(i); decCount[d]=(decCount[d]||0)+1; });
+    const decKeys=Object.keys(decCount).sort();
+    const maxDec=Math.max(1,...decKeys.map(k=>decCount[k]));
+    const decadeStats=decKeys.map(l=>({label:l,count:decCount[l],
+      barStyle:`height:100%;width:${(decCount[l]/maxDec*100)||2}%;border-radius:999px;background:#F4A124;min-width:6px;`}));
+    const genCount={};
+    S.seen.forEach(i=>{ const g=this.M[i][2]; genCount[g]=(genCount[g]||0)+1; });
+    const palette=['#FF5A4D','#0FB5A4','#F4A124','#7B61FF','#3B82F6','#E84393'];
+    const genreStats=Object.keys(genCount).sort((a,b)=>genCount[b]-genCount[a]).slice(0,5).map((g,idx)=>({label:g,count:genCount[g],
+      chipStyle:`font-size:12px;font-weight:700;padding:8px 13px;border-radius:999px;color:#fff;background:${palette[idx%palette.length]};`}));
+    const levels=[['Espectador',0],['Aficionado',4],['Cinéfilo',9],['Crítico de culto',15]];
+    let levelName='Espectador'; levels.forEach(([n,t])=>{ if(statsSeen>=t) levelName=n; });
+    const levelPct=this.clamp(statsSeen/20*100,6,100);
+
+    let detail=null;
+    if(S.detail!=null){
+      const m=this.mv(S.detail);
+      const isSeen=S.seen.indexOf(S.detail)>=0, inList=S.watchlist.indexOf(S.detail)>=0;
+      const statusLabel=isSeen?'VISTA':(inList?'RESERVADA':'');
+      detail=Object.assign({},m,{decade:this.decadeOf(S.detail),statusLabel,
+        statusStyle:`position:absolute;top:12px;right:13px;z-index:5;font-size:10px;font-weight:800;letter-spacing:.08em;padding:5px 11px;border-radius:999px;background:${isSeen?'#0FB5A4':'#F4A124'};color:${isSeen?'#fff':'#23201c'};`});
+    }
+
+    const curDecade=Math.floor(new Date().getFullYear()/10)*10;
+    const allDecades=[]; for(let d=1900; d<=curDecade; d+=10) allDecades.push(d+'s');
+    const decadeChips=allDecades.map(d=>{ const on=S.decades.indexOf(d)>=0;
+      return {label:d,onToggle:()=>this.toggleDecade(d),
+        style:`padding:9px 16px;border-radius:999px;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;border:1.5px solid ${on?'#23201c':'#d8cfc2'};background:${on?'#23201c':'#fff'};color:${on?'#F4EFE7':'#3a342e'};`}; });
+    const allGenres=['Crimen','Drama','Sci-Fi','Thriller','Acción','Comedia','Terror','Romance','Animación','Aventura'];
+    const genreChips=allGenres.map(g=>{ const on=S.genres.indexOf(g)>=0;
+      return {label:g,onToggle:()=>this.toggleGenre(g),
+        style:`padding:9px 14px;border-radius:999px;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;border:1.5px solid ${on?'#F4A124':'#d8cfc2'};background:${on?'#F4A124':'#fff'};color:${on?'#23201c':'#3a342e'};`}; });
+    const allRegions=['Hollywood','Europa','Asia','Latinoamérica','África','Oceanía'];
+    const regionChips=allRegions.map(r=>{ const on=S.regions.indexOf(r)>=0;
+      return {label:r,onToggle:()=>this.toggleRegion(r),
+        style:`padding:9px 14px;border-radius:999px;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;border:1.5px solid ${on?'#0FB5A4':'#d8cfc2'};background:${on?'#0FB5A4':'#fff'};color:${on?'#06302c':'#3a342e'};`}; });
+
+    const navColor=(v)=>S.view===v?'#F4A124':'rgba(244,239,231,.45)';
+
+    // ---- layout (density) toggle for Entradas / Reservas ----
+    const segStyle=(active)=>`width:33px;height:28px;border:none;border-radius:8px;display:grid;place-items:center;cursor:pointer;background:${active?'#F4A124':'transparent'};color:${active?'#23201c':'rgba(244,239,231,.5)'};transition:background .15s;`;
+    const colsFor=(m)=>m==='cover3'?3:m==='cover2'?2:1;
+    const gridStyleFor=(m)=>`display:grid;grid-template-columns:repeat(${colsFor(m)},1fr);gap:${m==='cover1'?14:12}px;`;
+    const cl=S.catLayout||'ticket';
+    const rl=S.resLayout||'ticket';
+
+    const q=(S.query||'').trim();
+    let searchResults=[];
+    if(q){
+      const badge=(bg,col)=>`position:absolute;top:9px;right:11px;font-size:9px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:999px;background:${bg};color:${col};`;
+      searchResults=this.M.map((_,i)=>({i,score:this.fuzzyScore(q,this.M[i][0])}))
+        .filter(r=>r.score>280)
+        .sort((a,b)=>b.score-a.score)
+        .slice(0,7)
+        .map(r=>{
+          const m=this.mv(r.i);
+          const isSeen=S.seen.indexOf(r.i)>=0, inList=S.watchlist.indexOf(r.i)>=0;
+          return Object.assign({},m,{
+            statusLabel:isSeen?'Vista':(inList?'Reservada':''),
+            statusStyle:isSeen?badge('#0FB5A4','#fff'):badge('#F4A124','#23201c'),
+            onClick:()=>this.pickSearch(r.i)
+          });
+        });
+    }
+
+    return {
+      showOnboard:!S.onboarded,
+      startApp:()=>this.setState({onboarded:true}),
+      isSwipe:S.view==='swipe', isCatalog:S.view==='catalog', isList:S.view==='list', isProfile:S.view==='profile',
+      navSwipe:()=>this.setState({view:'swipe'}), navCatalog:()=>this.setState({view:'catalog'}),
+      navList:()=>this.setState({view:'list'}), navProfile:()=>this.setState({view:'profile'}),
+      navSwipeColor:navColor('swipe'), navCatalogColor:navColor('catalog'), navListColor:navColor('list'), navProfileColor:navColor('profile'),
+      hasTop:topCard!=null, deckEmpty:topCard==null, topCard, bgCards, flyingCard,
+      onDown:this.onDown.bind(this),
+      btnSkip:()=>this.commit('left'), btnSeen:()=>this.commit('right'), btnList:()=>this.commit('up'),
+      collapseTop:this.collapseTop.bind(this),
+      toast:S.toast,
+      seenList, seenCount:statsSeen, seenEmpty:statsSeen===0, sortLabel, cycleSort:this.cycleSort.bind(this),
+      catIsTicket:cl==='ticket', catIsGrid:cl!=='ticket', catGridStyle:gridStyleFor(cl), catCompact:cl!=='cover1',
+      catSegTicket:segStyle(cl==='ticket'), catSeg1:segStyle(cl==='cover1'), catSeg2:segStyle(cl==='cover2'), catSeg3:segStyle(cl==='cover3'),
+      setCatTicket:()=>this.setState({catLayout:'ticket'}), setCat1:()=>this.setState({catLayout:'cover1'}), setCat2:()=>this.setState({catLayout:'cover2'}), setCat3:()=>this.setState({catLayout:'cover3'}),
+      resIsTicket:rl==='ticket', resIsGrid:rl!=='ticket', resGridStyle:gridStyleFor(rl), resCompact:rl!=='cover1',
+      resSegTicket:segStyle(rl==='ticket'), resSeg1:segStyle(rl==='cover1'), resSeg2:segStyle(rl==='cover2'), resSeg3:segStyle(rl==='cover3'),
+      setResTicket:()=>this.setState({resLayout:'ticket'}), setRes1:()=>this.setState({resLayout:'cover1'}), setRes2:()=>this.setState({resLayout:'cover2'}), setRes3:()=>this.setState({resLayout:'cover3'}),
+      watchList, watchCount:S.watchlist.length, watchEmpty:S.watchlist.length===0,
+      statsSeen, statsList:S.watchlist.length, statsHours, decadeStats, genreStats,
+      levelName, levelBarStyle:`height:100%;width:${levelPct}%;border-radius:999px;background:#23201c;`,
+      hasDetail:S.detail!=null, detail, closeDetail:this.closeDetail.bind(this), detailSeen:this.detailSeen.bind(this), detailList:this.detailList.bind(this),
+      filtersOpen:S.filtersOpen, openFilters:()=>this.setState({filtersOpen:true}), closeFilters:()=>this.setState({filtersOpen:false}),
+      stop:(e)=>{ e.stopPropagation(); }, clearFilters:()=>this.setState({decades:[],genres:[],regions:[]}),
+      decadeChips, genreChips, regionChips, remaining:vis.length, hasFilters:(S.decades.length+S.genres.length+S.regions.length)>0, filterCount:S.decades.length+S.genres.length+S.regions.length,
+      searchOpen:S.searchOpen, query:S.query, hasQuery:q.length>0,
+      openSearch:this.openSearch.bind(this), closeSearch:this.closeSearch.bind(this),
+      clearSearch:this.clearSearch.bind(this), onSearchInput:this.onSearchInput.bind(this),
+      searchResults, searchEmpty:q.length===0, searchNoResults:q.length>0&&searchResults.length===0,
+    };
+  }
+}
+</script>
+</body>
+</html>
