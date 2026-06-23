@@ -32,16 +32,20 @@
       <sc-if value="{{ showOnboard }}" hint-placeholder-val="{{ true }}">
       <div style="position:absolute;inset:0;z-index:75;background:#23201c;color:#F4EFE7;display:flex;flex-direction:column;padding:0 26px;overflow:hidden;">
         <div style="position:absolute;inset:0;opacity:.06;background:repeating-linear-gradient(0deg,#000 0 2px,transparent 2px 6px);pointer-events:none;"></div>
-        <div style="position:absolute;top:-40px;right:-30px;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle at 38% 36%,rgba(244,161,36,.55),rgba(244,161,36,.12) 60%,transparent 72%);pointer-events:none;"></div>
-        <div style="position:absolute;left:-26px;top:158px;width:120px;height:172px;border-radius:14px;background:#2b2620;box-shadow:inset 0 0 0 1px #3a342b;transform:rotate(-9deg);--r:-9deg;animation:fsFloat 7s ease-in-out infinite;"></div>
-        <div style="position:absolute;right:-30px;top:118px;width:124px;height:176px;border-radius:14px;background:#2f2922;box-shadow:inset 0 0 0 1px #3a342b;transform:rotate(8deg);--r:8deg;animation:fsFloat 8s ease-in-out infinite;"></div>
-
         <div style="height:42px;flex:none;display:flex;align-items:flex-end;justify-content:space-between;padding:0 0 6px;font-size:13px;font-weight:600;position:relative;z-index:2;"><span>9:41</span><span style="font-size:11px;">●●● ▼ ▮</span></div>
 
-        <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;position:relative;z-index:2;">
-          <div style="display:inline-flex;align-self:flex-start;align-items:center;gap:6px;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#23201c;background:#F4A124;padding:5px 11px;border-radius:999px;">★ Entrada</div>
-          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:46px;line-height:.92;letter-spacing:-.02em;margin:16px 0 0;">Filmswipe</div>
-          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;line-height:1.02;letter-spacing:-.01em;margin:10px 0 0;color:#F4A124;">Tu memoria de cine, ticket a ticket.</div>
+        <div style="flex:none;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:30px;line-height:1;letter-spacing:-.02em;margin:14px 0 0;position:relative;z-index:2;">Film<span style="color:#F4A124;">swipe</span></div>
+
+        <div style="flex:1;display:flex;flex-direction:column;position:relative;z-index:2;">
+          <div style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0;">
+            <div style="position:relative;width:120px;height:96px;flex:none;">
+              <div style="position:absolute;left:50%;top:50%;width:58px;height:80px;border-radius:13px;background:#F4EFE7;transform:translate(-66%,-50%) rotate(-12deg);box-shadow:0 12px 26px -10px rgba(0,0,0,.55);"></div>
+              <div style="position:absolute;left:50%;top:50%;width:58px;height:80px;border-radius:13px;background:#F4A124;transform:translate(-34%,-50%) rotate(10deg);display:grid;place-items:center;box-shadow:0 14px 30px -10px rgba(0,0,0,.5);">
+                <svg width="33" height="33" viewBox="0 0 24 24" fill="none" stroke="#23201c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M7 5l7 7-7 7"/><path d="M13 5l7 7-7 7"/></svg>
+              </div>
+            </div>
+          </div>
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:23px;line-height:1.02;letter-spacing:-.01em;margin:0;color:#F4EFE7;">Tu memoria de cine <span style="color:#F4A124;">película a película</span></div>
           <div style="font-size:14px;line-height:1.5;opacity:.82;margin-top:12px;max-width:240px;">Desliza cada entrada para guardar lo que has visto. Explora por décadas, géneros y países.</div>
         </div>
 
@@ -51,7 +55,16 @@
             <div style="display:flex;align-items:center;gap:13px;"><span style="width:34px;height:34px;flex:none;border-radius:10px;background:#FF5A4D;color:#fff;display:grid;place-items:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 6l-6 6 6 6"/><path d="M11 6l-6 6 6 6"/></svg></span><span style="display:flex;flex-direction:column;line-height:1.25;"><span style="font-size:14px;font-weight:700;">Desliza a la izquierda</span><span style="font-size:12px;font-weight:500;opacity:.62;">No la he visto</span></span></div>
             <div style="display:flex;align-items:center;gap:13px;"><span style="width:34px;height:34px;flex:none;border-radius:10px;background:#F4A124;color:#fff;display:grid;place-items:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 13l6-6 6 6"/><path d="M6 19l6-6 6 6"/></svg></span><span style="display:flex;flex-direction:column;line-height:1.25;"><span style="font-size:14px;font-weight:700;">Desliza arriba</span><span style="font-size:12px;font-weight:500;opacity:.62;">Pendiente</span></span></div>
           </div>
-          <button onClick="{{ startApp }}" style="width:100%;padding:17px;border:none;border-radius:16px;background:#F4A124;color:#23201c;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:17px;cursor:pointer;box-shadow:0 10px 26px -10px rgba(244,161,36,.8);-webkit-mask:radial-gradient(circle 9px at 0 50%,transparent 98%,#000 100%),radial-gradient(circle 9px at 100% 50%,transparent 98%,#000 100%);-webkit-mask-composite:source-in;mask:radial-gradient(circle 9px at 0 50%,transparent 98%,#000 100%),radial-gradient(circle 9px at 100% 50%,transparent 98%,#000 100%);mask-composite:intersect;">Empezar a deslizar →</button>
+          <div style="display:flex;flex-direction:column;gap:11px;">
+            <button onClick="{{ startApp }}" style="width:100%;padding:16px;border:none;border-radius:16px;background:#F4EFE7;color:#23201c;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:11px;box-shadow:0 10px 26px -12px rgba(0,0,0,.6);-webkit-mask:radial-gradient(circle 9px at 0 50%,transparent 98%,#000 100%),radial-gradient(circle 9px at 100% 50%,transparent 98%,#000 100%);-webkit-mask-composite:source-in;mask:radial-gradient(circle 9px at 0 50%,transparent 98%,#000 100%),radial-gradient(circle 9px at 100% 50%,transparent 98%,#000 100%);mask-composite:intersect;">
+              <svg width="19" height="19" viewBox="0 0 24 24" style="flex:none;"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-2.9l-3.9-3c-1.1.7-2.5 1.2-4.1 1.2-3.1 0-5.8-2.1-6.7-5H1.3v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.3 14.3a7.2 7.2 0 0 1 0-4.6V6.6H1.3a12 12 0 0 0 0 10.8l4-3.1z"/><path fill="#EA4335" d="M12 4.8c1.8 0 3.4.6 4.6 1.8l3.5-3.5A12 12 0 0 0 1.3 6.6l4 3.1c.9-2.9 3.6-5 6.7-5z"/></svg>
+              Continuar con Google
+            </button>
+            <button onClick="{{ startApp }}" style="width:100%;padding:16px;border:none;border-radius:16px;background:#0d0b0a;color:#F4EFE7;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:11px;box-shadow:0 10px 26px -12px rgba(0,0,0,.7);-webkit-mask:radial-gradient(circle 9px at 0 50%,transparent 98%,#000 100%),radial-gradient(circle 9px at 100% 50%,transparent 98%,#000 100%);-webkit-mask-composite:source-in;mask:radial-gradient(circle 9px at 0 50%,transparent 98%,#000 100%),radial-gradient(circle 9px at 100% 50%,transparent 98%,#000 100%);mask-composite:intersect;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" style="flex:none;"><path d="M16.4 12.7c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.8-3.5.8s-1.8-.8-3-.8c-1.6 0-3 .9-3.8 2.3-1.6 2.8-.4 7 1.2 9.3.8 1.1 1.7 2.4 2.9 2.3 1.2 0 1.6-.7 3-.7s1.8.7 3 .7c1.3 0 2.1-1.1 2.9-2.3.9-1.3 1.3-2.6 1.3-2.7-.1 0-2.5-.9-2.5-3.6zM14.2 5.9c.7-.8 1.1-2 1-3.1-1 0-2.1.6-2.8 1.4-.6.7-1.1 1.8-1 2.9 1.1.1 2.2-.5 2.8-1.2z"/></svg>
+              Continuar con Apple
+            </button>
+          </div>
         </div>
       </div>
       </sc-if>
@@ -65,13 +78,13 @@
       <!-- header -->
       <div style="flex:none;display:flex;align-items:center;justify-content:space-between;padding:4px 18px 10px;position:relative;z-index:2;">
         <div style="display:flex;align-items:baseline;gap:8px;">
-          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:21px;letter-spacing:-.02em;">Filmswipe</div>
+          <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:21px;letter-spacing:-.02em;">Film<span style="color:#F4A124;">swipe</span></div>
         </div>
         <div style="display:flex;align-items:center;gap:8px;">
-          <button onClick="{{ openSearch }}" style="width:34px;height:34px;flex:none;border-radius:999px;border:none;background:rgba(244,239,231,.1);color:#F4EFE7;display:grid;place-items:center;cursor:pointer;">
+          <button onClick="{{ openSearch }}" style="width:26px;height:26px;flex:none;border-radius:999px;border:none;background:rgba(244,239,231,.1);color:#F4EFE7;display:grid;place-items:center;cursor:pointer;">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.6-4.6"/></svg>
           </button>
-          <button onClick="{{ openFilters }}" style="display:flex;align-items:center;gap:6px;padding:7px 12px;border:none;border-radius:999px;background:#F4A124;color:#23201c;font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;position:relative;">
+          <button onClick="{{ openFilters }}" style="display:flex;align-items:center;gap:6px;padding:0 12px;height:26px;border:none;border-radius:999px;background:#F4A124;color:#23201c;font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;position:relative;">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18l-7 8v6l-4 2v-8z"/></svg>Filtros
             <sc-if value="{{ hasFilters }}" hint-placeholder-val="{{ false }}"><span style="position:absolute;top:-5px;right:-5px;min-width:17px;height:17px;padding:0 4px;border-radius:999px;background:#FF5A4D;color:#fff;font-size:10px;font-weight:800;display:grid;place-items:center;">{{ filterCount }}</span></sc-if>
           </button>
@@ -110,11 +123,11 @@
             <!-- TOP draggable ticket -->
             <sc-if value="{{ hasTop }}" hint-placeholder-val="{{ true }}">
             <div onPointerDown="{{ onDown }}" style="{{ topCard.liveStyle }}">
-              <div style="position:absolute;inset:0;background:#F4EFE7;border-radius:18px;box-shadow:0 24px 50px -18px rgba(0,0,0,.8);display:flex;flex-direction:column;overflow:visible;">
+              <div style="position:absolute;inset:0;background:#F4EFE7;border-radius:18px;box-shadow:0 12px 30px -20px rgba(0,0,0,.7);display:flex;flex-direction:column;overflow:visible;">
                 <!-- poster -->
                 <div style="position:relative;flex:none;height:58%;border-radius:18px 18px 0 0;overflow:hidden;">
                   <dc-import name="MoviePoster" art="true" caption="false" title="{{ topCard.title }}" year="{{ topCard.year }}" genre="{{ topCard.genre }}" director="{{ topCard.director }}" rating="{{ topCard.rating }}" color="{{ topCard.color }}" text-color="{{ topCard.textColor }}" seed="{{ topCard.seed }}" radius="0" hint-size="100%,100%" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;"></dc-import>
-                  <div style="position:absolute;top:12px;left:13px;font-size:9px;font-weight:800;letter-spacing:.16em;color:rgba(255,255,255,.9);">FILMSWIPE · ENTRADA</div>
+                  <div style="position:absolute;top:12px;left:13px;font-size:9px;font-weight:800;letter-spacing:.16em;color:rgba(255,255,255,.9);">FILM<span style="color:#F4A124;">SWIPE</span> · ENTRADA</div>
                 </div>
                 <!-- perforated tear -->
                 <div style="position:relative;height:0;z-index:6;">
@@ -123,13 +136,15 @@
                   <div style="position:absolute;left:14px;right:14px;top:-1px;border-top:2px dashed #cdbfa8;"></div>
                 </div>
                 <!-- stub -->
-                <div style="flex:1;display:flex;flex-direction:column;justify-content:center;padding:14px 18px 10px;color:#23201c;">
-                  <div style="display:flex;justify-content:space-between;align-items:baseline;">
-                    <div style="font-size:9px;font-weight:700;letter-spacing:.16em;color:#a89a86;">PASE Nº {{ topCard.year }}</div>
-                  </div>
-                  <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:25px;line-height:.96;letter-spacing:-.02em;margin:8px 0 4px;">{{ topCard.title }}</div>
+                <div style="flex:1;min-height:0;display:flex;flex-direction:column;padding:13px 18px 10px;color:#23201c;">
+                  <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;line-height:.96;letter-spacing:-.02em;margin:0 0 4px;">{{ topCard.title }}</div>
                   <div style="font-size:12px;color:#8a7f74;">{{ topCard.genre }} · {{ topCard.year }} · {{ topCard.director }}</div>
-                  <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:auto;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#bcae99;">
+                  <p style="font-size:12.5px;line-height:1.48;color:#3a342e;margin:9px 0 0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">{{ topCard.synopsis }}</p>
+                  <div style="display:flex;align-items:baseline;gap:6px;margin-top:7px;">
+                    <span style="flex:none;font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#bcae99;">Con</span>
+                    <span style="min-width:0;font-size:11.5px;font-weight:600;color:#6b6258;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ topCard.cast }}</span>
+                  </div>
+                  <div style="display:flex;align-items:center;justify-content:center;gap:6px;margin-top:auto;padding-top:9px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#bcae99;">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>Toca para ampliar
                   </div>
                 </div>
@@ -138,8 +153,8 @@
                   <div onPointerDown="{{ stop }}" style="{{ topCard.panelStyle }}">
                     <div style="flex:none;display:flex;align-items:flex-start;justify-content:space-between;gap:10px;padding:16px 16px 10px;color:#23201c;">
                       <div style="min-width:0;">
-                        <div style="font-size:9px;font-weight:700;letter-spacing:.16em;color:#a89a86;">PASE Nº {{ topCard.year }}</div>
-                        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:23px;line-height:.98;letter-spacing:-.02em;margin-top:5px;">{{ topCard.title }}</div>
+                        <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:23px;line-height:.98;letter-spacing:-.02em;">{{ topCard.title }}</div>
+                        <div style="font-size:12px;color:#8a7f74;margin-top:5px;">{{ topCard.genre }} · {{ topCard.year }} · {{ topCard.director }}</div>
                       </div>
                       <button onClick="{{ collapseTop }}" style="flex:none;width:30px;height:30px;border-radius:50%;border:none;background:rgba(35,32,28,.08);display:grid;place-items:center;cursor:pointer;color:#23201c;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
                     </div>
@@ -151,7 +166,9 @@
                         <div style="font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:#F4A124;color:#23201c;">{{ topCard.ratingLabel }}</div>
                       </div>
                       <div style="font-size:12px;font-weight:600;color:#a89a86;margin-bottom:7px;">Dirigida por {{ topCard.director }}</div>
-                      <p style="font-size:14px;line-height:1.55;color:#3a342e;margin:0;">{{ topCard.synopsis }}</p>
+                      <p style="font-size:14px;line-height:1.55;color:#3a342e;margin:0 0 14px;">{{ topCard.synopsis }}</p>
+                      <div style="font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#bcae99;margin-bottom:5px;">Reparto principal</div>
+                      <div style="font-size:13.5px;line-height:1.5;font-weight:600;color:#3a342e;">{{ topCard.cast }}</div>
                     </div>
                   </div>
                 </div>
@@ -166,10 +183,10 @@
 
           <!-- action buttons -->
           <sc-if value="{{ hasTop }}" hint-placeholder-val="{{ true }}">
-          <div style="flex:none;display:flex;align-items:center;justify-content:center;gap:14px;padding:6px 0 14px;">
-            <button onClick="{{ btnSkip }}" style="width:56px;height:56px;border-radius:50%;border:none;background:#F4EFE7;box-shadow:0 6px 16px -6px rgba(0,0,0,.6);color:#FF5A4D;display:grid;place-items:center;cursor:pointer;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
-            <button onClick="{{ btnList }}" style="width:46px;height:46px;border-radius:50%;border:none;background:#F4A124;box-shadow:0 6px 16px -6px rgba(244,161,36,.7);color:#23201c;display:grid;place-items:center;cursor:pointer;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
-            <button onClick="{{ btnSeen }}" style="width:56px;height:56px;border-radius:50%;border:none;background:#0FB5A4;box-shadow:0 6px 16px -6px rgba(15,181,164,.7);color:#fff;display:grid;place-items:center;cursor:pointer;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></button>
+          <div style="flex:none;display:flex;align-items:center;justify-content:center;gap:16px;padding:14px 0 14px;">
+            <button onClick="{{ btnSkip }}" style="width:44px;height:44px;border-radius:14px;border:none;background:#FF5A4D;box-shadow:0 5px 13px -6px rgba(255,90,77,.7);color:#fff;display:grid;place-items:center;cursor:pointer;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 6l-6 6 6 6"/><path d="M11 6l-6 6 6 6"/></svg></button>
+            <button onClick="{{ btnList }}" style="width:38px;height:38px;border-radius:12px;border:none;background:#F4A124;box-shadow:0 5px 13px -6px rgba(244,161,36,.7);color:#fff;display:grid;place-items:center;cursor:pointer;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 13l6-6 6 6"/><path d="M6 19l6-6 6 6"/></svg></button>
+            <button onClick="{{ btnSeen }}" style="width:44px;height:44px;border-radius:14px;border:none;background:#0FB5A4;box-shadow:0 5px 13px -6px rgba(15,181,164,.7);color:#fff;display:grid;place-items:center;cursor:pointer;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 6l6 6-6 6"/><path d="M13 6l6 6-6 6"/></svg></button>
           </div>
           </sc-if>
         </div>
@@ -183,10 +200,22 @@
             <div style="font-size:12px;color:rgba(244,239,231,.55);">{{ seenCount }} películas selladas</div>
           </div>
           <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:15px;">
-            <button onClick="{{ cycleSort }}" style="flex:none;display:inline-flex;align-items:center;gap:6px;padding:8px 13px;border:1px solid rgba(244,239,231,.22);border-radius:999px;background:rgba(244,239,231,.06);color:#F4EFE7;font-family:inherit;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11"></path><path d="M3 12h7"></path><path d="M3 18h4"></path><path d="M18 8v9"></path><path d="M15 14l3 3 3-3"></path></svg>
-              {{ sortLabel }}
-            </button>
+            <div style="position:relative;flex:none;">
+              <button onClick="{{ toggleSort }}" style="display:inline-flex;align-items:center;gap:6px;padding:6px 13px;border:1px solid rgba(244,239,231,.22);border-radius:999px;background:rgba(244,239,231,.06);color:#F4EFE7;font-family:inherit;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h11"></path><path d="M3 12h7"></path><path d="M3 18h4"></path><path d="M18 8v9"></path><path d="M15 14l3 3 3-3"></path></svg>
+                {{ sortLabel }}
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="{{ sortChevronStyle }}"><path d="M6 9l6 6 6-6"/></svg>
+              </button>
+              <sc-if value="{{ sortOpen }}" hint-placeholder-val="{{ false }}">
+                <div onClick="{{ closeSort }}" style="position:fixed;inset:0;z-index:30;"></div>
+                <div style="position:absolute;top:calc(100% + 7px);left:0;z-index:31;min-width:170px;background:#1b1814;border:1px solid #3a352d;border-radius:13px;padding:5px;box-shadow:0 18px 38px -14px rgba(0,0,0,.8);">
+                  <div style="font-size:9px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(244,239,231,.42);padding:7px 11px 6px;">Ordenar por</div>
+                  <sc-for list="{{ sortOptions }}" as="o" hint-placeholder-count="4">
+                    <button onClick="{{ o.onClick }}" style="{{ o.style }}">{{ o.label }}<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" style="{{ o.checkStyle }}"><path d="M5 13l4 4L19 7"/></svg></button>
+                  </sc-for>
+                </div>
+              </sc-if>
+            </div>
             <div style="display:flex;gap:2px;padding:3px;border-radius:11px;background:rgba(244,239,231,.06);">
               <button onClick="{{ setCatTicket }}" style="{{ catSegTicket }}"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="6" width="18" height="4.5" rx="1.4"/><rect x="3" y="13.5" width="18" height="4.5" rx="1.4"/></svg></button>
               <button onClick="{{ setCat1 }}" style="{{ catSeg1 }}"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><rect x="7" y="3" width="10" height="18" rx="2"/></svg></button>
@@ -211,7 +240,7 @@
                       <div style="font-size:11px;color:#8a7f74;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ m.genre }} · {{ m.director }}</div>
                     </div>
                     <div style="flex:none;display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
-                      <div style="font-size:9px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#23201c;background:#F4A124;padding:3px 8px;border-radius:999px;white-space:nowrap;">{{ m.ratingLabel }}</div>
+                      <div style="font-size:11px;font-weight:800;letter-spacing:.02em;color:#23201c;background:#F4A124;padding:3px 9px;border-radius:999px;white-space:nowrap;display:flex;align-items:center;gap:3px;"><span style="font-size:9px;">★</span>{{ m.rating }}</div>
                     </div>
                   </div>
                 </div>
@@ -224,7 +253,7 @@
             <sc-for list="{{ seenList }}" as="m" hint-placeholder-count="6">
               <div onClick="{{ m.onClick }}" style="position:relative;cursor:pointer;">
                 <div style="position:relative;width:100%;aspect-ratio:2/3;border-radius:13px;overflow:hidden;box-shadow:0 12px 24px -14px rgba(0,0,0,.8),inset 0 0 0 1px rgba(0,0,0,.45);">
-                  <dc-import name="MoviePoster" caption="true" compact="{{ catCompact }}" title="{{ m.title }}" year="{{ m.year }}" genre="{{ m.genre }}" director="{{ m.director }}" rating="{{ m.rating }}" color="{{ m.color }}" text-color="{{ m.textColor }}" seed="{{ m.seed }}" radius="0" hint-size="100%,100%" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;"></dc-import>
+                  <dc-import name="MoviePoster" caption="true" compact="{{ catCompact }}" title-size="{{ catGridTitleSize }}" title="{{ m.title }}" year="{{ m.year }}" genre="{{ m.genre }}" director="{{ m.director }}" rating="{{ m.rating }}" color="{{ m.color }}" text-color="{{ m.textColor }}" seed="{{ m.seed }}" radius="0" hint-size="100%,100%" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;"></dc-import>
                 </div>
                 <div style="position:absolute;left:-5px;top:48%;width:10px;height:10px;border-radius:50%;background:#23201c;"></div>
                 <div style="position:absolute;right:-5px;top:48%;width:10px;height:10px;border-radius:50%;background:#23201c;"></div>
@@ -273,7 +302,7 @@
             <sc-for list="{{ watchList }}" as="m" hint-placeholder-count="6">
               <div onClick="{{ m.onClick }}" style="position:relative;cursor:pointer;">
                 <div style="position:relative;width:100%;aspect-ratio:2/3;border-radius:13px;overflow:hidden;box-shadow:0 12px 24px -14px rgba(0,0,0,.8),inset 0 0 0 1px rgba(0,0,0,.45);">
-                  <dc-import name="MoviePoster" caption="true" compact="{{ resCompact }}" title="{{ m.title }}" year="{{ m.year }}" genre="{{ m.genre }}" director="{{ m.director }}" rating="{{ m.rating }}" color="{{ m.color }}" text-color="{{ m.textColor }}" seed="{{ m.seed }}" radius="0" hint-size="100%,100%" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;"></dc-import>
+                  <dc-import name="MoviePoster" caption="true" compact="{{ resCompact }}" title-size="{{ resGridTitleSize }}" title="{{ m.title }}" year="{{ m.year }}" genre="{{ m.genre }}" director="{{ m.director }}" rating="{{ m.rating }}" color="{{ m.color }}" text-color="{{ m.textColor }}" seed="{{ m.seed }}" radius="0" hint-size="100%,100%" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;"></dc-import>
                   <div style="position:absolute;top:9px;left:9px;font-size:8px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#23201c;background:#F4A124;padding:3px 7px;border-radius:999px;">Reservada</div>
                 </div>
                 <div style="position:absolute;left:-5px;top:48%;width:10px;height:10px;border-radius:50%;background:#23201c;"></div>
@@ -364,7 +393,7 @@
           <div style="position:relative;background:#F4EFE7;border-radius:18px;box-shadow:0 24px 50px -18px rgba(0,0,0,.8);color:#23201c;overflow:visible;">
             <div style="position:relative;height:230px;border-radius:18px 18px 0 0;overflow:hidden;">
               <dc-import name="MoviePoster" art="true" caption="false" title="{{ detail.title }}" year="{{ detail.year }}" genre="{{ detail.genre }}" director="{{ detail.director }}" rating="{{ detail.rating }}" color="{{ detail.color }}" text-color="{{ detail.textColor }}" seed="{{ detail.seed }}" radius="0" hint-size="100%,100%" style="width:100%;height:100%;"></dc-import>
-              <div style="position:absolute;top:12px;left:13px;font-size:9px;font-weight:800;letter-spacing:.16em;color:rgba(255,255,255,.9);">FILMSWIPE · ENTRADA</div>
+              <div style="position:absolute;top:12px;left:13px;font-size:9px;font-weight:800;letter-spacing:.16em;color:rgba(255,255,255,.9);">FILM<span style="color:#F4A124;">SWIPE</span> · ENTRADA</div>
               <sc-if value="{{ detail.statusLabel }}" hint-placeholder-val="{{ false }}"><div style="{{ detail.statusStyle }}">{{ detail.statusLabel }}</div></sc-if>
             </div>
             <div style="position:relative;height:0;">
@@ -375,7 +404,7 @@
             <div style="padding:16px 18px 18px;">
               <div style="display:flex;justify-content:space-between;align-items:baseline;">
                 <div style="font-size:9px;font-weight:700;letter-spacing:.16em;color:#a89a86;">PASE Nº {{ detail.year }}</div>
-                <div style="font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#23201c;background:#F4A124;padding:4px 11px;border-radius:999px;white-space:nowrap;">{{ detail.ratingLabel }}</div>
+                <div style="font-size:12px;font-weight:800;letter-spacing:.02em;color:#23201c;background:#F4A124;padding:4px 12px;border-radius:999px;white-space:nowrap;display:flex;align-items:center;gap:4px;"><span style="font-size:10px;">★</span>{{ detail.rating }}</div>
               </div>
               <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:28px;line-height:.98;letter-spacing:-.02em;margin:8px 0 10px;">{{ detail.title }}</div>
               <div style="display:flex;gap:7px;flex-wrap:wrap;margin-bottom:13px;">
@@ -384,7 +413,9 @@
                 <div style="font-size:10px;font-weight:700;letter-spacing:.04em;padding:5px 10px;border-radius:999px;background:#ece5d7;color:#6b6258;">{{ detail.decade }}</div>
               </div>
               <div style="font-size:12px;font-weight:600;color:#a89a86;margin-bottom:5px;">Dirigida por {{ detail.director }}</div>
-              <p style="font-size:14px;line-height:1.55;color:#3a342e;margin:0 0 16px;">{{ detail.synopsis }}</p>
+              <p style="font-size:14px;line-height:1.55;color:#3a342e;margin:0 0 14px;">{{ detail.synopsis }}</p>
+              <div style="font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#bcae99;margin-bottom:5px;">Reparto principal</div>
+              <div style="font-size:13.5px;line-height:1.5;font-weight:600;color:#3a342e;margin-bottom:16px;">{{ detail.cast }}</div>
               <div style="border-top:1px dashed #d8cdb8;margin:0 0 14px;"></div>
               <div style="display:flex;gap:10px;">
                 <button onClick="{{ detailSeen }}" style="flex:1;padding:14px;border:none;border-radius:12px;background:#0FB5A4;color:#fff;font-family:inherit;font-weight:700;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>La he visto</button>
@@ -434,26 +465,77 @@
 
       <!-- ============ FILTERS ============ -->
       <sc-if value="{{ filtersOpen }}" hint-placeholder-val="{{ false }}">
-      <div onClick="{{ closeFilters }}" style="position:absolute;inset:0;z-index:55;background:rgba(10,8,6,.6);display:flex;align-items:flex-end;">
-        <div onClick="{{ stop }}" style="width:100%;background:#F4EFE7;border-radius:26px 26px 0 0;padding:18px 20px 24px;box-shadow:0 -10px 30px -10px rgba(0,0,0,.5);color:#23201c;">
-          <div style="width:40px;height:4px;border-radius:999px;background:#d8cfc2;margin:0 auto 16px;"></div>
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-            <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;">Filtrar cartelera</div>
-            <button onClick="{{ clearFilters }}" style="border:none;background:none;color:#8a7f74;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;text-decoration:underline;">Limpiar</button>
+      <div onClick="{{ closeFilters }}" style="position:absolute;inset:0;z-index:55;background:rgba(10,8,6,.62);display:flex;align-items:flex-end;">
+        <div onClick="{{ stop }}" style="width:100%;max-height:90%;display:flex;flex-direction:column;background:#F4EFE7;border-radius:26px 26px 0 0;box-shadow:0 -12px 44px -12px rgba(0,0,0,.6);color:#23201c;overflow:hidden;">
+
+          <!-- header -->
+          <div style="flex:none;padding:13px 22px 13px;">
+            <div style="width:38px;height:4px;border-radius:999px;background:#d8cfc2;margin:0 auto 15px;"></div>
+            <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px;">
+              <div>
+                <div style="font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#b7a890;">Taquilla</div>
+                <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:23px;line-height:1;margin-top:4px;">Filtrar cartelera</div>
+              </div>
+              <sc-if value="{{ hasFilters }}" hint-placeholder-val="{{ false }}">
+                <button onClick="{{ clearFilters }}" style="flex:none;display:inline-flex;align-items:center;gap:5px;padding:7px 12px;border:1px solid #d8cfc2;border-radius:999px;background:#fff;color:#8a7f74;font-family:inherit;font-size:11px;font-weight:700;cursor:pointer;">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>Limpiar
+                </button>
+              </sc-if>
+            </div>
           </div>
-          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#a89a86;margin-bottom:9px;">Década</div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
-            <sc-for list="{{ decadeChips }}" as="ch" hint-placeholder-count="3"><button onClick="{{ ch.onToggle }}" style="{{ ch.style }}">{{ ch.label }}</button></sc-for>
+
+          <!-- scroll body -->
+          <div class="fsScroll" style="flex:1;overflow-y:auto;padding:6px 22px 16px;">
+
+            <div style="display:flex;align-items:center;gap:8px;margin:0 0 4px;">
+              <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;">Década</span>
+              <sc-if value="{{ decSel }}" hint-placeholder-val="{{ false }}"><span style="font-size:10px;font-weight:800;background:#23201c;color:#F4EFE7;border-radius:999px;min-width:17px;height:17px;padding:0 5px;display:grid;place-items:center;">{{ decSel }}</span></sc-if>
+            </div>
+            <div class="fsScroll" style="overflow-x:auto;padding:8px 0 2px;">
+              <div style="position:relative;width:max-content;min-width:100%;">
+                <div style="position:absolute;left:14px;right:14px;top:16px;height:2px;background:#e0d6c5;"></div>
+                <div style="position:relative;display:flex;gap:6px;"><sc-for list="{{ decadeChips }}" as="n" hint-placeholder-count="6"><button onClick="{{ n.onToggle }}" style="display:flex;flex-direction:column;align-items:center;border:none;background:none;cursor:pointer;padding:0;flex:none;width:42px;"><span style="height:16px;display:flex;align-items:center;justify-content:center;"><span style="{{ n.dotStyle }}"></span></span><span style="{{ n.labelStyle }}">{{ n.label }}</span></button></sc-for></div>
+              </div>
+            </div>
+
+            <div style="border-top:1.5px dashed #ddd2bd;margin:18px 0;"></div>
+
+            <div style="display:flex;align-items:center;gap:8px;margin:0 0 11px;">
+              <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;">Género</span>
+              <sc-if value="{{ genSel }}" hint-placeholder-val="{{ false }}"><span style="font-size:10px;font-weight:800;background:#23201c;color:#F4EFE7;border-radius:999px;min-width:17px;height:17px;padding:0 5px;display:grid;place-items:center;">{{ genSel }}</span></sc-if>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;">
+              <sc-for list="{{ genreChips }}" as="ch" hint-placeholder-count="9"><button onClick="{{ ch.onToggle }}" style="{{ ch.style }}">{{ ch.label }}</button></sc-for>
+            </div>
+
+            <div style="border-top:1.5px dashed #ddd2bd;margin:18px 0;"></div>
+
+            <div style="display:flex;align-items:center;gap:8px;margin:0 0 11px;">
+              <span style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;">Origen</span>
+              <span style="font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#b7a890;">· Región</span>
+              <sc-if value="{{ regSel }}" hint-placeholder-val="{{ false }}"><span style="font-size:10px;font-weight:800;background:#23201c;color:#F4EFE7;border-radius:999px;min-width:17px;height:17px;padding:0 5px;display:grid;place-items:center;">{{ regSel }}</span></sc-if>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;">
+              <sc-for list="{{ regionChips }}" as="ch" hint-placeholder-count="6"><button onClick="{{ ch.onToggle }}" style="{{ ch.style }}"><span style="{{ ch.dotStyle }}"></span>{{ ch.label }}</button></sc-for>
+            </div>
+            <div style="display:flex;align-items:center;gap:7px;margin:14px 0 9px;">
+              <span style="font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#b7a890;">País</span>
+              <span style="font-size:10.5px;font-weight:600;color:#a89a86;">{{ countryHint }}</span>
+              <sc-if value="{{ ctrySel }}" hint-placeholder-val="{{ false }}"><span style="font-size:10px;font-weight:800;background:#23201c;color:#F4EFE7;border-radius:999px;min-width:17px;height:17px;padding:0 5px;display:grid;place-items:center;">{{ ctrySel }}</span></sc-if>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:7px;">
+              <sc-for list="{{ countryChips }}" as="c" hint-placeholder-count="6"><button onClick="{{ c.onToggle }}" style="{{ c.style }}"><span style="{{ c.dotStyle }}"></span>{{ c.label }}</button></sc-for>
+            </div>
+
           </div>
-          <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#a89a86;margin-bottom:9px;">Género</div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px;">
-            <sc-for list="{{ genreChips }}" as="ch" hint-placeholder-count="6"><button onClick="{{ ch.onToggle }}" style="{{ ch.style }}">{{ ch.label }}</button></sc-for>
+
+          <!-- sticky footer -->
+          <div style="flex:none;padding:14px 22px 22px;border-top:1.5px dashed #ddd2bd;background:#F4EFE7;">
+            <button onClick="{{ closeFilters }}" style="width:100%;padding:15px;border:none;border-radius:14px;background:#23201c;color:#F4EFE7;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;">
+              Ver {{ remaining }} entradas
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#F4A124" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </button>
           </div>
-          <div style="display:flex;align-items:center;gap:7px;margin-bottom:9px;"><div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#a89a86;">Origen</div><div style="font-size:9px;font-weight:700;color:#06302c;background:#0FB5A4;padding:2px 7px;border-radius:999px;">Hollywood o mundo</div></div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;">
-            <sc-for list="{{ regionChips }}" as="ch" hint-placeholder-count="6"><button onClick="{{ ch.onToggle }}" style="{{ ch.style }}">{{ ch.label }}</button></sc-for>
-          </div>
-          <button onClick="{{ closeFilters }}" style="width:100%;padding:14px;border:none;border-radius:12px;background:#23201c;color:#F4EFE7;font-family:inherit;font-weight:700;font-size:14px;cursor:pointer;">Ver {{ remaining }} entradas</button>
         </div>
       </div>
       </sc-if>
@@ -465,40 +547,40 @@
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:404,&quot;height&quot;:772}}">
 class Component extends DCLogic {
   M = [
-    ["Pulp Fiction","1994","Crimen","Tarantino","4.8",154,"#FF5A4D","#ffffff","Las historias de unos gánsteres, un boxeador y un misterioso maletín se entrelazan en Los Ángeles.","Hollywood"],
-    ["El Club de la Lucha","1999","Drama","Fincher","4.7",139,"#262626","#ffffff","Un oficinista insomne funda con un carismático extraño un club clandestino que se le va de las manos.","Hollywood"],
-    ["Titanic","1997","Romance","Cameron","4.3",195,"#2EC4B6","#06302c","Un amor imposible entre dos jóvenes de clases opuestas a bordo del barco más famoso de la historia.","Hollywood"],
-    ["Matrix","1999","Sci-Fi","Wachowski","4.7",136,"#12B886","#04261c","Un hacker descubre que la realidad que conoce es en verdad una simulación controlada por máquinas.","Hollywood"],
-    ["Parque Jurásico","1993","Aventura","Spielberg","4.5",127,"#F4A124","#2a1700","Un parque temático de dinosaurios clonados se convierte en una trampa mortal cuando todo falla.","Hollywood"],
-    ["El Rey León","1994","Animación","Allers","4.6",88,"#FF8A3D","#2a1400","Un joven león debe superar la pérdida y reclamar su lugar legítimo al frente de la sabana.","Hollywood"],
-    ["Toy Story","1995","Animación","Lasseter","4.5",81,"#3B82F6","#ffffff","Los juguetes cobran vida cuando los humanos no miran, y dos rivales aprenden a ser amigos.","Hollywood"],
-    ["Forrest Gump","1994","Drama","Zemeckis","4.6",142,"#59C36A","#06280f","Un hombre de gran corazón y mente sencilla atraviesa, sin proponérselo, décadas de historia americana.","Hollywood"],
-    ["Uno de los Nuestros","1990","Crimen","Scorsese","4.7",145,"#B23A48","#ffffff","El ascenso y la caída de un joven que entrega su vida entera a la mafia neoyorquina.","Hollywood"],
-    ["El Silencio de los Corderos","1991","Thriller","Demme","4.6",118,"#6D4C7D","#ffffff","Una novata del FBI busca la ayuda de un brillante asesino encarcelado para atrapar a otro en libertad.","Hollywood"],
-    ["Terminator 2","1991","Acción","Cameron","4.5",137,"#2C5BAA","#ffffff","Una máquina viaja desde el futuro para proteger al niño que un día liderará a la humanidad.","Hollywood"],
-    ["La Lista de Schindler","1993","Drama","Spielberg","4.8",195,"#595959","#ffffff","Un empresario arriesga todo para salvar a cientos de trabajadores durante la ocupación nazi.","Hollywood"],
-    ["Seven","1995","Thriller","Fincher","4.6",127,"#1F3D2B","#ffffff","Dos detectives persiguen a un asesino que comete sus crímenes inspirándose en los pecados capitales.","Hollywood"],
-    ["Trainspotting","1996","Drama","Boyle","4.4",94,"#FF6F3C","#2a1100","Un grupo de amigos en Edimburgo sobrevive entre la adicción, la amistad y el deseo de escapar.","Europa"],
-    ["El Gran Lebowski","1998","Comedia","Coen","4.4",117,"#E8B53A","#2a2000","Una confusión de identidades arrastra a un despreocupado holgazán a un absurdo enredo criminal.","Hollywood"],
-    ["Heat","1995","Crimen","Mann","4.5",170,"#B91C1C","#ffffff","Un detective obsesivo y un ladrón metódico se persiguen mutuamente en una Los Ángeles tensa.","Hollywood"],
-    ["Regreso al Futuro","1985","Sci-Fi","Zemeckis","4.7",116,"#7B61FF","#ffffff","Un adolescente viaja accidentalmente al pasado en un coche modificado y altera la historia familiar.","Hollywood"],
-    ["El Resplandor","1980","Terror","Kubrick","4.6",146,"#C0392B","#ffffff","Una familia cuida un hotel aislado en invierno donde una presencia siniestra empieza a acechar.","Hollywood"],
-    ["Gladiator","2000","Acción","Scott","4.5",155,"#8B5E34","#ffffff","Un general romano traicionado y esclavizado busca vengarse del emperador desde la arena del circo.","Hollywood"],
-    ["Amélie","2001","Romance","Jeunet","4.6",122,"#E84393","#ffffff","Una joven soñadora de París decide cambiar en secreto, y para mejor, la vida de quienes la rodean.","Europa"],
-    ["Oldboy","2003","Thriller","Park Chan-wook","4.6",120,"#6D4C7D","#ffffff","Un hombre encerrado durante quince años sin explicación es liberado de golpe y busca a su captor.","Asia"],
-    ["Parásitos","2019","Thriller","Bong Joon-ho","4.7",132,"#1F3D2B","#ffffff","Una familia humilde se infiltra poco a poco en el hogar de una adinerada con consecuencias imprevisibles.","Asia"],
-    ["El Viaje de Chihiro","2001","Animación","Miyazaki","4.8",125,"#5FA9D1","#06293a","Una niña queda atrapada en un mundo de espíritus y debe trabajar para liberar a sus padres hechizados.","Asia"],
-    ["Tigre y Dragón","2000","Acción","Ang Lee","4.3",120,"#1E6E5C","#ffffff","Dos guerreros persiguen una espada legendaria robada mientras callan un amor imposible.","Asia"],
-    ["Ciudad de Dios","2002","Crimen","Meirelles","4.7",130,"#E8843A","#2a1500","Dos chicos crecen en una favela de Río donde uno empuña la cámara y el otro empuña las armas.","Latinoamérica"],
-    ["El Laberinto del Fauno","2006","Drama","del Toro","4.6",118,"#3A5134","#ffffff","Una niña escapa de la dura España de posguerra hacia un mundo de fauno, hadas y pruebas oscuras.","Latinoamérica"],
-    ["Amores Perros","2000","Drama","Iñárritu","4.5",154,"#B23A2E","#ffffff","Un brutal accidente de coche en Ciudad de México entrelaza tres vidas marcadas por el amor y la pérdida.","Latinoamérica"],
-    ["Relatos Salvajes","2014","Comedia","Szifrón","4.4",122,"#C42E2E","#ffffff","Seis historias independientes llevan a gente común hasta el límite donde estalla la venganza.","Latinoamérica"],
-    ["La Vida de los Otros","2006","Drama","Donnersmarck","4.7",137,"#5A6470","#ffffff","Un agente de la Stasi que vigila a un dramaturgo en la RDA empieza a dudar de su propia misión.","Europa"],
-    ["Cinema Paradiso","1988","Drama","Tornatore","4.6",155,"#C7892F","#2a1c00","Un cineasta recuerda su infancia en un pueblo siciliano junto al proyeccionista que le enseñó a amar el cine.","Europa"],
-    ["Timbuktu","2014","Drama","Sissako","4.2",96,"#D9A441","#2a1d00","La vida de una familia de pastores se quiebra cuando unos yihadistas imponen su ley en la ciudad.","África"],
-    ["Tsotsi","2005","Drama","Gavin Hood","4.1",94,"#C05A2A","#ffffff","Un joven pandillero de Johannesburgo roba un coche y descubre un bebé en el asiento trasero.","África"],
-    ["The Babadook","2014","Terror","Jennifer Kent","4.0",94,"#2A2A30","#ffffff","Una madre viuda y su hijo son acechados por la criatura de un siniestro libro infantil.","Oceanía"],
-    ["Lo que Hacemos en las Sombras","2014","Comedia","Waititi","4.3",86,"#3B2F52","#ffffff","Cuatro vampiros comparten piso en Wellington y lidian con tareas domésticas y rencillas de siglos.","Oceanía"]
+    ["Pulp Fiction","1994","Crimen","Tarantino","4.8",154,"#FF5A4D","#ffffff","Las historias de unos gánsteres, un boxeador y un misterioso maletín se entrelazan en Los Ángeles.","América","EE.UU.","John Travolta, Samuel L. Jackson, Uma Thurman"],
+    ["El Club de la Lucha","1999","Drama","Fincher","4.7",139,"#262626","#ffffff","Un oficinista insomne funda con un carismático extraño un club clandestino que se le va de las manos.","América","EE.UU.","Brad Pitt, Edward Norton, Helena Bonham Carter"],
+    ["Titanic","1997","Romance","Cameron","4.3",195,"#2EC4B6","#06302c","Un amor imposible entre dos jóvenes de clases opuestas a bordo del barco más famoso de la historia.","América","EE.UU.","Leonardo DiCaprio, Kate Winslet, Billy Zane"],
+    ["Matrix","1999","Sci-Fi","Wachowski","4.7",136,"#12B886","#04261c","Un hacker descubre que la realidad que conoce es en verdad una simulación controlada por máquinas.","América","EE.UU.","Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss"],
+    ["Parque Jurásico","1993","Aventura","Spielberg","4.5",127,"#F4A124","#2a1700","Un parque temático de dinosaurios clonados se convierte en una trampa mortal cuando todo falla.","América","EE.UU.","Sam Neill, Laura Dern, Jeff Goldblum"],
+    ["El Rey León","1994","Animación","Allers","4.6",88,"#FF8A3D","#2a1400","Un joven león debe superar la pérdida y reclamar su lugar legítimo al frente de la sabana.","América","EE.UU.","Matthew Broderick, James Earl Jones, Jeremy Irons"],
+    ["Toy Story","1995","Animación","Lasseter","4.5",81,"#3B82F6","#ffffff","Los juguetes cobran vida cuando los humanos no miran, y dos rivales aprenden a ser amigos.","América","EE.UU.","Tom Hanks, Tim Allen, Don Rickles"],
+    ["Forrest Gump","1994","Drama","Zemeckis","4.6",142,"#59C36A","#06280f","Un hombre de gran corazón y mente sencilla atraviesa, sin proponérselo, décadas de historia americana.","América","EE.UU.","Tom Hanks, Robin Wright, Gary Sinise"],
+    ["Uno de los Nuestros","1990","Crimen","Scorsese","4.7",145,"#B23A48","#ffffff","El ascenso y la caída de un joven que entrega su vida entera a la mafia neoyorquina.","América","EE.UU.","Robert De Niro, Ray Liotta, Joe Pesci"],
+    ["El Silencio de los Corderos","1991","Thriller","Demme","4.6",118,"#6D4C7D","#ffffff","Una novata del FBI busca la ayuda de un brillante asesino encarcelado para atrapar a otro en libertad.","América","EE.UU.","Jodie Foster, Anthony Hopkins, Scott Glenn"],
+    ["Terminator 2","1991","Acción","Cameron","4.5",137,"#2C5BAA","#ffffff","Una máquina viaja desde el futuro para proteger al niño que un día liderará a la humanidad.","América","EE.UU.","Arnold Schwarzenegger, Linda Hamilton, Edward Furlong"],
+    ["La Lista de Schindler","1993","Drama","Spielberg","4.8",195,"#595959","#ffffff","Un empresario arriesga todo para salvar a cientos de trabajadores durante la ocupación nazi.","América","EE.UU.","Liam Neeson, Ben Kingsley, Ralph Fiennes"],
+    ["Seven","1995","Thriller","Fincher","4.6",127,"#1F3D2B","#ffffff","Dos detectives persiguen a un asesino que comete sus crímenes inspirándose en los pecados capitales.","América","EE.UU.","Brad Pitt, Morgan Freeman, Kevin Spacey"],
+    ["Trainspotting","1996","Drama","Boyle","4.4",94,"#FF6F3C","#2a1100","Un grupo de amigos en Edimburgo sobrevive entre la adicción, la amistad y el deseo de escapar.","Europa","Reino Unido","Ewan McGregor, Ewen Bremner, Jonny Lee Miller"],
+    ["El Gran Lebowski","1998","Comedia","Coen","4.4",117,"#E8B53A","#2a2000","Una confusión de identidades arrastra a un despreocupado holgazán a un absurdo enredo criminal.","América","EE.UU.","Jeff Bridges, John Goodman, Julianne Moore"],
+    ["Heat","1995","Crimen","Mann","4.5",170,"#B91C1C","#ffffff","Un detective obsesivo y un ladrón metódico se persiguen mutuamente en una Los Ángeles tensa.","América","EE.UU.","Al Pacino, Robert De Niro, Val Kilmer"],
+    ["Regreso al Futuro","1985","Sci-Fi","Zemeckis","4.7",116,"#7B61FF","#ffffff","Un adolescente viaja accidentalmente al pasado en un coche modificado y altera la historia familiar.","América","EE.UU.","Michael J. Fox, Christopher Lloyd, Lea Thompson"],
+    ["El Resplandor","1980","Terror","Kubrick","4.6",146,"#C0392B","#ffffff","Una familia cuida un hotel aislado en invierno donde una presencia siniestra empieza a acechar.","América","EE.UU.","Jack Nicholson, Shelley Duvall, Danny Lloyd"],
+    ["Gladiator","2000","Acción","Scott","4.5",155,"#8B5E34","#ffffff","Un general romano traicionado y esclavizado busca vengarse del emperador desde la arena del circo.","América","EE.UU.","Russell Crowe, Joaquin Phoenix, Connie Nielsen"],
+    ["Amélie","2001","Romance","Jeunet","4.6",122,"#E84393","#ffffff","Una joven soñadora de París decide cambiar en secreto, y para mejor, la vida de quienes la rodean.","Europa","Francia","Audrey Tautou, Mathieu Kassovitz, Rufus"],
+    ["Oldboy","2003","Thriller","Park Chan-wook","4.6",120,"#6D4C7D","#ffffff","Un hombre encerrado durante quince años sin explicación es liberado de golpe y busca a su captor.","Asia","Corea del Sur","Choi Min-sik, Yoo Ji-tae, Kang Hye-jung"],
+    ["Parásitos","2019","Thriller","Bong Joon-ho","4.7",132,"#1F3D2B","#ffffff","Una familia humilde se infiltra poco a poco en el hogar de una adinerada con consecuencias imprevisibles.","Asia","Corea del Sur","Song Kang-ho, Lee Sun-kyun, Cho Yeo-jeong"],
+    ["El Viaje de Chihiro","2001","Animación","Miyazaki","4.8",125,"#5FA9D1","#06293a","Una niña queda atrapada en un mundo de espíritus y debe trabajar para liberar a sus padres hechizados.","Asia","Japón","Rumi Hiiragi, Miyu Irino, Mari Natsuki"],
+    ["Tigre y Dragón","2000","Acción","Ang Lee","4.3",120,"#1E6E5C","#ffffff","Dos guerreros persiguen una espada legendaria robada mientras callan un amor imposible.","Asia","China","Chow Yun-fat, Michelle Yeoh, Zhang Ziyi"],
+    ["Ciudad de Dios","2002","Crimen","Meirelles","4.7",130,"#E8843A","#2a1500","Dos chicos crecen en una favela de Río donde uno empuña la cámara y el otro empuña las armas.","Latinoamérica","Brasil","Alexandre Rodrigues, Leandro Firmino, Phellipe Haagensen"],
+    ["El Laberinto del Fauno","2006","Drama","del Toro","4.6",118,"#3A5134","#ffffff","Una niña escapa de la dura España de posguerra hacia un mundo de fauno, hadas y pruebas oscuras.","Latinoamérica","México","Ivana Baquero, Sergi López, Maribel Verdú"],
+    ["Amores Perros","2000","Drama","Iñárritu","4.5",154,"#B23A2E","#ffffff","Un brutal accidente de coche en Ciudad de México entrelaza tres vidas marcadas por el amor y la pérdida.","Latinoamérica","México","Gael García Bernal, Emilio Echevarría, Goya Toledo"],
+    ["Relatos Salvajes","2014","Comedia","Szifrón","4.4",122,"#C42E2E","#ffffff","Seis historias independientes llevan a gente común hasta el límite donde estalla la venganza.","Latinoamérica","Argentina","Ricardo Darín, Óscar Martínez, Leonardo Sbaraglia"],
+    ["La Vida de los Otros","2006","Drama","Donnersmarck","4.7",137,"#5A6470","#ffffff","Un agente de la Stasi que vigila a un dramaturgo en la RDA empieza a dudar de su propia misión.","Europa","Alemania","Ulrich Mühe, Martina Gedeck, Sebastian Koch"],
+    ["Cinema Paradiso","1988","Drama","Tornatore","4.6",155,"#C7892F","#2a1c00","Un cineasta recuerda su infancia en un pueblo siciliano junto al proyeccionista que le enseñó a amar el cine.","Europa","Italia","Philippe Noiret, Salvatore Cascio, Jacques Perrin"],
+    ["Timbuktu","2014","Drama","Sissako","4.2",96,"#D9A441","#2a1d00","La vida de una familia de pastores se quiebra cuando unos yihadistas imponen su ley en la ciudad.","África","Mauritania","Ibrahim Ahmed, Toulou Kiki, Abel Jafri"],
+    ["Tsotsi","2005","Drama","Gavin Hood","4.1",94,"#C05A2A","#ffffff","Un joven pandillero de Johannesburgo roba un coche y descubre un bebé en el asiento trasero.","África","Sudáfrica","Presley Chweneyagae, Terry Pheto, Kenneth Nkosi"],
+    ["The Babadook","2014","Terror","Jennifer Kent","4.0",94,"#2A2A30","#ffffff","Una madre viuda y su hijo son acechados por la criatura de un siniestro libro infantil.","Oceanía","Australia","Essie Davis, Noah Wiseman, Daniel Henshall"],
+    ["Lo que Hacemos en las Sombras","2014","Comedia","Waititi","4.3",86,"#3B2F52","#ffffff","Cuatro vampiros comparten piso en Wellington y lidian con tareas domésticas y rencillas de siglos.","Oceanía","Nueva Zelanda","Taika Waititi, Jemaine Clement, Jonathan Brugh"]
   ];
 
   state = (() => {
@@ -506,14 +588,14 @@ class Component extends DCLogic {
     const seedList = [2,9];
     const order = this.M.map((_,i)=>i).filter(i=>seedSeen.indexOf(i)<0 && seedList.indexOf(i)<0);
     return { view:'swipe', onboarded:false, order, seen:seedSeen.slice(), watchlist:seedList.slice(), skipped:[],
-             drag:null, fly:null, flyActive:false, detail:null, expanded:false, filtersOpen:false, decades:[], genres:[], regions:[], toast:null,
-             searchOpen:false, query:'', seenSort:'recent', catLayout:'ticket', resLayout:'ticket' };
+             drag:null, fly:null, flyActive:false, detail:null, expanded:false, filtersOpen:false, decades:[], genres:[], regions:[], countries:[], toast:null,
+             searchOpen:false, query:'', seenSort:'recent', sortOpen:false, catLayout:'ticket', resLayout:'ticket' };
   })();
 
   ratingLabelOf(r){
     const v=+r;
-    if(v>=4.7) return 'Obra de arte';
-    if(v>=4.4) return 'Buenísima';
+    if(v>=4.75) return 'Obra de arte';
+    if(v>=4.25) return 'Buenísima';
     if(v>=3.5) return 'Buena';
     if(v>=2.5) return 'Sin más';
     if(v>=1.5) return 'Mala';
@@ -522,14 +604,16 @@ class Component extends DCLogic {
   mv(i){
     const a=this.M[i];
     return {idx:i,title:a[0],year:a[1],genre:a[2],director:a[3],rating:a[4],runtime:a[5],color:a[6],textColor:a[7],synopsis:a[8],
-      seed:i, region:a[9], ratingLabel:this.ratingLabelOf(a[4])};
+      seed:i, region:a[9], cast:a[11], ratingLabel:this.ratingLabelOf(a[4])};
   }
   decadeOf(i){ const y=+this.M[i][1]; return (Math.floor(y/10)*10)+"s"; }
-  cycleSort(){ const o=['recent','title','year','rating']; const i=o.indexOf(this.state.seenSort||'recent'); this.setState({seenSort:o[(i+1)%o.length]}); }
+  toggleSort(){ this.setState({sortOpen:!this.state.sortOpen}); }
+  closeSort(){ this.setState({sortOpen:false}); }
+  setSort(k){ this.setState({seenSort:k,sortOpen:false}); }
 
   visibleOrder(){
-    const {order,decades,genres,regions}=this.state;
-    return order.filter(i=>(decades.length===0||decades.indexOf(this.decadeOf(i))>=0)&&(genres.length===0||genres.indexOf(this.M[i][2])>=0)&&(regions.length===0||regions.indexOf(this.M[i][9])>=0));
+    const {order,decades,genres,regions,countries}=this.state;
+    return order.filter(i=>(decades.length===0||decades.indexOf(this.decadeOf(i))>=0)&&(genres.length===0||genres.indexOf(this.M[i][2])>=0)&&(regions.length===0||regions.indexOf(this.M[i][9])>=0)&&(countries.length===0||countries.indexOf(this.M[i][10])>=0));
   }
 
   clamp(v,a,b){ return Math.max(a,Math.min(b,v)); }
@@ -556,21 +640,21 @@ class Component extends DCLogic {
   }
   collapseTop(){ this.setState({expanded:false}); }
 
-  commit(dir){
+  commit(dir,silent){
     const vis=this.visibleOrder(); const top=vis[0]; if(top==null) return;
     const d=this.state.drag||{x:0,y:0};
     const seen=this.state.seen.slice(), watch=this.state.watchlist.slice(), skip=this.state.skipped.slice();
-    let toast;
-    if(dir==='right'){ seen.push(top); toast='✓ Entrada sellada'; }
-    else if(dir==='up'){ watch.push(top); toast='↑ Reservada'; }
-    else { skip.push(top); toast='Saltada'; }
+    let toast=null;
+    if(dir==='right'){ seen.push(top); if(!silent) toast='✓ Entrada sellada'; }
+    else if(dir==='up'){ watch.push(top); if(!silent) toast='↑ Reservada'; }
+    else { skip.push(top); if(!silent) toast='Saltada'; }
     const order=this.state.order.filter(i=>i!==top);
     this.dragActive=false;
     this.setState({order,seen,watchlist:watch,skipped:skip,drag:null,expanded:false,fly:{idx:top,dir,startX:d.x,startY:d.y},flyActive:false,toast});
     setTimeout(()=>{ if(this.state.fly) this.setState({flyActive:true}); },20);
     setTimeout(()=>{ this.setState({fly:null,flyActive:false}); },400);
     this._toastT && clearTimeout(this._toastT);
-    this._toastT=setTimeout(()=>this.setState({toast:null}),1500);
+    if(!silent) this._toastT=setTimeout(()=>this.setState({toast:null}),1500);
   }
 
   openDetail(i){ this.setState({detail:i}); }
@@ -594,7 +678,15 @@ class Component extends DCLogic {
 
   toggleDecade(d){ const a=this.state.decades; this.setState({decades:a.indexOf(d)>=0?a.filter(x=>x!==d):a.concat(d)}); }
   toggleGenre(g){ const a=this.state.genres; this.setState({genres:a.indexOf(g)>=0?a.filter(x=>x!==g):a.concat(g)}); }
-  toggleRegion(r){ const a=this.state.regions; this.setState({regions:a.indexOf(r)>=0?a.filter(x=>x!==r):a.concat(r)}); }
+  toggleRegion(r){
+    const a=this.state.regions; const has=a.indexOf(r)>=0;
+    const regions=has?a.filter(x=>x!==r):a.concat(r);
+    // al deseleccionar una región, suelta sus países seleccionados
+    let countries=this.state.countries;
+    if(has){ const drop={}; this.M.forEach(m=>{ if(m[9]===r) drop[m[10]]=true; }); countries=countries.filter(c=>!drop[c]); }
+    this.setState({regions,countries});
+  }
+  toggleCountry(c){ const a=this.state.countries; this.setState({countries:a.indexOf(c)>=0?a.filter(x=>x!==c):a.concat(c)}); }
 
   // ---- intelligent (typo-tolerant) search ----
   lev(a,b){
@@ -710,6 +802,10 @@ class Component extends DCLogic {
     else if(sortMode==='rating') seenIdx.sort((a,b)=>(+this.M[b][4])-(+this.M[a][4]));
     const seenList=seenIdx.map(mkRow);
     const sortLabel=sortLabels[sortMode];
+    const sortKeys=['recent','title','year','rating'];
+    const sortOptItem=(active)=>`display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;padding:9px 11px;border:none;border-radius:9px;background:${active?'rgba(244,161,36,.14)':'transparent'};color:${active?'#F4A124':'#F4EFE7'};font-family:inherit;font-size:12.5px;font-weight:${active?800:600};cursor:pointer;text-align:left;white-space:nowrap;`;
+    const sortOptions=sortKeys.map(k=>({label:sortLabels[k],style:sortOptItem(sortMode===k),checkStyle:`flex:none;opacity:${sortMode===k?1:0};`,onClick:()=>this.setSort(k)}));
+    const sortChevronStyle=`transition:transform .2s;transform:rotate(${S.sortOpen?180:0}deg);`;
     const watchList=S.watchlist.slice().reverse().map(mkRow);
 
     const statsSeen=S.seen.length;
@@ -738,25 +834,53 @@ class Component extends DCLogic {
         statusStyle:`position:absolute;top:12px;right:13px;z-index:5;font-size:10px;font-weight:800;letter-spacing:.08em;padding:5px 11px;border-radius:999px;background:${isSeen?'#0FB5A4':'#F4A124'};color:${isSeen?'#fff':'#23201c'};`});
     }
 
-    const curDecade=Math.floor(new Date().getFullYear()/10)*10;
-    const allDecades=[]; for(let d=1900; d<=curDecade; d+=10) allDecades.push(d+'s');
-    const decadeChips=allDecades.map(d=>{ const on=S.decades.indexOf(d)>=0;
-      return {label:d,onToggle:()=>this.toggleDecade(d),
-        style:`padding:9px 16px;border-radius:999px;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;border:1.5px solid ${on?'#23201c':'#d8cfc2'};background:${on?'#23201c':'#fff'};color:${on?'#F4EFE7':'#3a342e'};`}; });
-    const allGenres=['Crimen','Drama','Sci-Fi','Thriller','Acción','Comedia','Terror','Romance','Animación','Aventura'];
-    const genreChips=allGenres.map(g=>{ const on=S.genres.indexOf(g)>=0;
-      return {label:g,onToggle:()=>this.toggleGenre(g),
-        style:`padding:9px 14px;border-radius:999px;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;border:1.5px solid ${on?'#F4A124':'#d8cfc2'};background:${on?'#F4A124':'#fff'};color:${on?'#23201c':'#3a342e'};`}; });
-    const allRegions=['Hollywood','Europa','Asia','Latinoamérica','África','Oceanía'];
-    const regionChips=allRegions.map(r=>{ const on=S.regions.indexOf(r)>=0;
-      return {label:r,onToggle:()=>this.toggleRegion(r),
-        style:`padding:9px 14px;border-radius:999px;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;border:1.5px solid ${on?'#0FB5A4':'#d8cfc2'};background:${on?'#0FB5A4':'#fff'};color:${on?'#06302c':'#3a342e'};`}; });
+    // shared chip styles (unified "ink" selection on the cream sheet)
+    const chipBase='display:inline-flex;align-items:center;gap:7px;padding:9px 14px;border-radius:999px;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer;transition:background .15s,border-color .15s,color .15s;';
+    const chipOff=chipBase+'border:1.5px solid #d8cfc2;background:#fff;color:#3a342e;';
+    const chipOn=chipBase+'border:1.5px solid #23201c;background:#23201c;color:#F4EFE7;';
+    const countOff='font-size:11px;font-weight:700;color:#bcae99;';
+    const countOn='font-size:11px;font-weight:700;color:rgba(244,239,231,.55);';
+
+    // ---- Década: línea de tiempo con scroll horizontal (opción E) ----
+    const decCountAll={}; this.M.forEach((a,i)=>{ const d=this.decadeOf(i); decCountAll[d]=(decCountAll[d]||0)+1; });
+    const decadeChips=Object.keys(decCountAll).sort().map(d=>{ const on=S.decades.indexOf(d)>=0;
+      return {label:d,count:decCountAll[d],onToggle:()=>this.toggleDecade(d),
+        dotStyle:`width:${on?'15px':'10px'};height:${on?'15px':'10px'};border-radius:50%;background:${on?'#F4A124':'#cdbfa8'};box-shadow:${on?'0 0 0 4px rgba(244,161,36,.22)':'none'};transition:all .15s;`,
+        labelStyle:`font-size:9.5px;font-weight:${on?'800':'600'};color:${on?'#23201c':'#a89a86'};margin-top:6px;white-space:nowrap;`}; });
+
+    // ---- Género: mosaico de 3 columnas (opción E) ----
+    const tileBase='padding:11px 4px;border-radius:11px;text-align:center;font-family:inherit;font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;border:1.5px solid ';
+    const tileOn='#23201c;background:#23201c;color:#F4EFE7;';
+    const tileOff='#d8cfc2;background:#fff;color:#3a342e;';
+    const genCountAll={}; this.M.forEach(a=>{ genCountAll[a[2]]=(genCountAll[a[2]]||0)+1; });
+    const genreChips=Object.keys(genCountAll).sort((a,b)=>a.localeCompare(b,'es')).map(g=>{ const on=S.genres.indexOf(g)>=0;
+      return {label:g,onToggle:()=>this.toggleGenre(g),style:tileBase+(on?tileOn:tileOff)}; });
+
+    // ---- Origen nivel 1: Región en mosaico de 3 columnas con punto de color ----
+    const regDot={'América':'#F4A124',Europa:'#7B61FF',Asia:'#0FB5A4','Latinoamérica':'#FF5A4D','África':'#E8843A',Oceanía:'#3B82F6'};
+    const regOrder=['América','Europa','Asia','Latinoamérica','África','Oceanía'];
+    const regSet={}; this.M.forEach(a=>{ regSet[a[9]]=true; });
+    const regionChips=regOrder.filter(r=>regSet[r]).map(r=>{ const on=S.regions.indexOf(r)>=0;
+      return {label:r,onToggle:()=>this.toggleRegion(r),style:tileBase+(on?tileOn:tileOff)+'display:flex;flex-direction:column;align-items:center;gap:5px;',
+        dotStyle:`width:8px;height:8px;border-radius:50%;background:${regDot[r]};box-shadow:${on?'0 0 0 2px rgba(244,239,231,.35)':'none'};`}; });
+
+    // ---- Origen nivel 2: País, filtrado por la(s) región(es) elegida(s) ----
+    const ctryReg={}; const ctryOrder=[];
+    this.M.forEach(a=>{ if(ctryReg[a[10]]===undefined){ ctryReg[a[10]]=a[9]; ctryOrder.push(a[10]); } });
+    const selReg=S.regions;
+    const visCtry=ctryOrder.filter(c=>selReg.length===0||selReg.indexOf(ctryReg[c])>=0);
+    const countryHint=selReg.length?('en '+selReg.join(', ')):'todas las regiones';
+    const pillBase='display:inline-flex;align-items:center;gap:7px;border-radius:999px;font-family:inherit;font-weight:600;font-size:12px;padding:7px 12px;cursor:pointer;white-space:nowrap;transition:all .15s;border:1.5px solid ';
+    const countryChips=visCtry.map(c=>{ const on=S.countries.indexOf(c)>=0;
+      return {label:c,onToggle:()=>this.toggleCountry(c),style:pillBase+(on?tileOn:tileOff),
+        dotStyle:`width:7px;height:7px;border-radius:50%;flex:none;background:${regDot[ctryReg[c]]||'#a89a86'};box-shadow:${on?'0 0 0 2px rgba(244,239,231,.35)':'none'};`}; });
 
     const navColor=(v)=>S.view===v?'#F4A124':'rgba(244,239,231,.45)';
 
     // ---- layout (density) toggle for Entradas / Reservas ----
-    const segStyle=(active)=>`width:33px;height:28px;border:none;border-radius:8px;display:grid;place-items:center;cursor:pointer;background:${active?'#F4A124':'transparent'};color:${active?'#23201c':'rgba(244,239,231,.5)'};transition:background .15s;`;
+    const segStyle=(active)=>`width:33px;height:22px;border:none;border-radius:8px;display:grid;place-items:center;cursor:pointer;background:${active?'#F4A124':'transparent'};color:${active?'#23201c':'rgba(244,239,231,.5)'};transition:background .15s;`;
     const colsFor=(m)=>m==='cover3'?3:m==='cover2'?2:1;
+    const titleSizeFor=(m)=>m==='cover3'?10.5:m==='cover2'?13:20;
     const gridStyleFor=(m)=>`display:grid;grid-template-columns:repeat(${colsFor(m)},1fr);gap:${m==='cover1'?14:12}px;`;
     const cl=S.catLayout||'ticket';
     const rl=S.resLayout||'ticket';
@@ -789,14 +913,14 @@ class Component extends DCLogic {
       navSwipeColor:navColor('swipe'), navCatalogColor:navColor('catalog'), navListColor:navColor('list'), navProfileColor:navColor('profile'),
       hasTop:topCard!=null, deckEmpty:topCard==null, topCard, bgCards, flyingCard,
       onDown:this.onDown.bind(this),
-      btnSkip:()=>this.commit('left'), btnSeen:()=>this.commit('right'), btnList:()=>this.commit('up'),
+      btnSkip:()=>this.commit('left',true), btnSeen:()=>this.commit('right',true), btnList:()=>this.commit('up',true),
       collapseTop:this.collapseTop.bind(this),
       toast:S.toast,
-      seenList, seenCount:statsSeen, seenEmpty:statsSeen===0, sortLabel, cycleSort:this.cycleSort.bind(this),
-      catIsTicket:cl==='ticket', catIsGrid:cl!=='ticket', catGridStyle:gridStyleFor(cl), catCompact:cl!=='cover1',
+      seenList, seenCount:statsSeen, seenEmpty:statsSeen===0, sortLabel, sortOptions, sortChevronStyle, sortOpen:S.sortOpen, toggleSort:this.toggleSort.bind(this), closeSort:this.closeSort.bind(this),
+      catIsTicket:cl==='ticket', catIsGrid:cl!=='ticket', catGridStyle:gridStyleFor(cl), catCompact:cl!=='cover1', catGridTitleSize:titleSizeFor(cl),
       catSegTicket:segStyle(cl==='ticket'), catSeg1:segStyle(cl==='cover1'), catSeg2:segStyle(cl==='cover2'), catSeg3:segStyle(cl==='cover3'),
       setCatTicket:()=>this.setState({catLayout:'ticket'}), setCat1:()=>this.setState({catLayout:'cover1'}), setCat2:()=>this.setState({catLayout:'cover2'}), setCat3:()=>this.setState({catLayout:'cover3'}),
-      resIsTicket:rl==='ticket', resIsGrid:rl!=='ticket', resGridStyle:gridStyleFor(rl), resCompact:rl!=='cover1',
+      resIsTicket:rl==='ticket', resIsGrid:rl!=='ticket', resGridStyle:gridStyleFor(rl), resCompact:rl!=='cover1', resGridTitleSize:titleSizeFor(rl),
       resSegTicket:segStyle(rl==='ticket'), resSeg1:segStyle(rl==='cover1'), resSeg2:segStyle(rl==='cover2'), resSeg3:segStyle(rl==='cover3'),
       setResTicket:()=>this.setState({resLayout:'ticket'}), setRes1:()=>this.setState({resLayout:'cover1'}), setRes2:()=>this.setState({resLayout:'cover2'}), setRes3:()=>this.setState({resLayout:'cover3'}),
       watchList, watchCount:S.watchlist.length, watchEmpty:S.watchlist.length===0,
@@ -804,8 +928,8 @@ class Component extends DCLogic {
       levelName, levelBarStyle:`height:100%;width:${levelPct}%;border-radius:999px;background:#23201c;`,
       hasDetail:S.detail!=null, detail, closeDetail:this.closeDetail.bind(this), detailSeen:this.detailSeen.bind(this), detailList:this.detailList.bind(this),
       filtersOpen:S.filtersOpen, openFilters:()=>this.setState({filtersOpen:true}), closeFilters:()=>this.setState({filtersOpen:false}),
-      stop:(e)=>{ e.stopPropagation(); }, clearFilters:()=>this.setState({decades:[],genres:[],regions:[]}),
-      decadeChips, genreChips, regionChips, remaining:vis.length, hasFilters:(S.decades.length+S.genres.length+S.regions.length)>0, filterCount:S.decades.length+S.genres.length+S.regions.length,
+      stop:(e)=>{ e.stopPropagation(); }, clearFilters:()=>this.setState({decades:[],genres:[],regions:[],countries:[]}),
+      decadeChips, genreChips, regionChips, countryChips, countryHint, decSel:S.decades.length, genSel:S.genres.length, regSel:S.regions.length, ctrySel:S.countries.length, remaining:vis.length, hasFilters:(S.decades.length+S.genres.length+S.regions.length+S.countries.length)>0, filterCount:S.decades.length+S.genres.length+S.regions.length+S.countries.length,
       searchOpen:S.searchOpen, query:S.query, hasQuery:q.length>0,
       openSearch:this.openSearch.bind(this), closeSearch:this.closeSearch.bind(this),
       clearSearch:this.clearSearch.bind(this), onSearchInput:this.onSearchInput.bind(this),
