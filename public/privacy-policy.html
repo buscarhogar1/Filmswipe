@@ -149,12 +149,13 @@
       <p>Segun como uses la aplicacion, Filmswipe puede tratar las siguientes categorias de datos:</p>
       <ul>
         <li>Datos de cuenta y autenticacion: identificador de usuario de Firebase, proveedor de inicio de sesion y, si eliges iniciar sesion con Google o Apple, nombre visible, correo electronico y URL de foto de perfil cuando el proveedor los entrega.</li>
+        <li>Foto de perfil: si eliges una imagen de tu fototeca para usarla como foto de perfil, procesamos la imagen seleccionada sin solicitar sus metadatos completos y la guardamos asociada a tu cuenta en Cloud Firestore.</li>
         <li>Datos de uso dentro de la app: peliculas marcadas como vistas, pendientes o descartadas, metadatos basicos de esas peliculas y fecha de actualizacion.</li>
         <li>Consultas y filtros de busqueda: texto de busqueda, idioma, region, generos, paises, anos o preferencias enviados a nuestros servicios para mostrar resultados de peliculas.</li>
         <li>Datos tecnicos necesarios para el funcionamiento: tokens de autenticacion, identificadores tecnicos, informacion de dispositivo/app y registros de diagnostico procesados por Firebase, Google Cloud y servicios relacionados.</li>
         <li>Datos de analitica: aperturas de la app, sesiones, modelo de dispositivo, sistema operativo, ubicacion geografica aproximada e identificadores de instalacion o dispositivo procesados por Google Analytics for Firebase cuando esta disponible.</li>
       </ul>
-      <p class="note">Filmswipe no solicita acceso a ubicacion precisa, contactos, camara, microfono, fotos ni archivos del dispositivo.</p>
+      <p class="note">Filmswipe puede solicitar acceso a tu fototeca solo si eliges una foto de perfil. No solicita acceso a ubicacion precisa, contactos, camara, microfono ni archivos del dispositivo.</p>
     </section>
 
     <section>
@@ -162,6 +163,7 @@
       <p>Usamos los datos para:</p>
       <ul>
         <li>Crear y mantener tu sesion, incluso mediante inicio de sesion anonimo.</li>
+        <li>Mostrar la foto de perfil que eliges en la app.</li>
         <li>Guardar y sincronizar tus decisiones sobre peliculas entre sesiones.</li>
         <li>Buscar y mostrar informacion de peliculas.</li>
         <li>Proteger la app contra accesos no autorizados y abuso del servicio.</li>
@@ -207,7 +209,7 @@
 
     <section>
       <h2>10. Tus derechos y opciones</h2>
-      <p>Segun tu ubicacion, puedes tener derecho a solicitar acceso, rectificacion, eliminacion, limitacion u oposicion al tratamiento de tus datos. Para ejercer estos derechos, escribe a <a href="mailto:filmswipe@hotmail.com">filmswipe@hotmail.com</a>. Tambien puedes gestionar permisos del dispositivo desde los ajustes de Android.</p>
+      <p>Segun tu ubicacion, puedes tener derecho a solicitar acceso, rectificacion, eliminacion, limitacion u oposicion al tratamiento de tus datos. Para ejercer estos derechos, escribe a <a href="mailto:filmswipe@hotmail.com">filmswipe@hotmail.com</a>. Tambien puedes gestionar permisos del dispositivo desde los ajustes de tu dispositivo.</p>
     </section>
 
     <section>
