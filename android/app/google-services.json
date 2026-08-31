@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "336155035055",
+    "project_id": "filmswipe-c4c22",
+    "storage_bucket": "filmswipe-c4c22.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336155035055:android:8a523e5d33050fb3535b5a",
+        "android_client_info": {
+          "package_name": "com.filmswipe.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "336155035055-5t0kltvtp93jdqhbr66objd95l6m1ute.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.filmswipe.app",
+            "certificate_hash": "1d6fb6e47bc32a59237b8ea846d120a6fc35cdac"
+          }
+        },
+        {
+          "client_id": "336155035055-bu8ai288c6p35f8bs052evja75qe8dkl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.filmswipe.app",
+            "certificate_hash": "026060843971767a2293e605d376852fbb54225a"
+          }
+        },
+        {
+          "client_id": "336155035055-heotidh4s7ejne0qlfobs54kj4sden13.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.filmswipe.app",
+            "certificate_hash": "70d04fed00c3268814cb74ab01670d891b91dc58"
+          }
+        },
+        {
+          "client_id": "336155035055-37degi31hul5d6lmb57o9u9k16i9bc7t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDU3xkMf2Y7iAcNzFOUIXON2b3l7qUxJeE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "336155035055-37degi31hul5d6lmb57o9u9k16i9bc7t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

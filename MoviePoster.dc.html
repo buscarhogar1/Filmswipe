@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</helmet>
+<div style="position:relative;width:100%;height:100%;border-radius:{{ radius }}px;overflow:hidden;background:{{ color }};color:{{ textColor }};font-family:'Space Grotesk',sans-serif;box-shadow:inset 0 0 0 1px rgba(0,0,0,.42);">
+
+  <!-- color grade -->
+  <div style="{{ gradeStyle }}"></div>
+
+  <!-- genre motif layers -->
+  <sc-if value="{{ l1 }}" hint-placeholder-val="{{ false }}"><div style="{{ l1 }}"></div></sc-if>
+  <sc-if value="{{ l2 }}" hint-placeholder-val="{{ false }}"><div style="{{ l2 }}"></div></sc-if>
+  <sc-if value="{{ l3 }}" hint-placeholder-val="{{ false }}"><div style="{{ l3 }}"></div></sc-if>
+  <sc-if value="{{ l4 }}" hint-placeholder-val="{{ false }}"><div style="{{ l4 }}"></div></sc-if>
+
+  <!-- cinematic vignette + film grain -->
+  <div style="{{ vignetteStyle }}"></div>
+  <div style="{{ grainStyle }}"></div>
+
+  <!-- printed keyline frame -->
+  <div style="{{ keylineStyle }}"></div>
+
+  <!-- top chips -->
+  <sc-if value="{{ showTop }}" hint-placeholder-val="{{ true }}">
+  <div style="position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:14px 15px;z-index:3;">
+    <span style="font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:5px 9px;border-radius:999px;background:rgba(0,0,0,.28);border:1px solid rgba(255,255,255,.26);backdrop-filter:blur(2px);">{{ genre }}</span>
+    <span style="font-size:11px;font-weight:700;background:rgba(0,0,0,.28);padding:5px 9px;border-radius:999px;white-space:nowrap;backdrop-filter:blur(2px);">{{ ratingDisplay }}</span>
+  </div>
+  </sc-if>
+
+  <!-- simple caption (grids) -->
+  <sc-if value="{{ showSimpleCaption }}" hint-placeholder-val="{{ true }}">
+  <div style="position:absolute;left:0;right:0;bottom:0;padding:{{ captionPad }};background:linear-gradient(transparent, rgba(0,0,0,.20) 22%, rgba(0,0,0,.62));z-index:3;">
+    <sc-if value="{{ showEyebrow }}" hint-placeholder-val="{{ false }}"><div style="font-size:8px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;opacity:.72;margin-bottom:5px;">{{ eyebrow }}</div></sc-if>
+    <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:{{ titleSize }}px;line-height:.94;letter-spacing:-.02em;text-wrap:balance;overflow-wrap:break-word;text-shadow:0 1px 14px rgba(0,0,0,.4);">{{ title }}</div>
+    <div style="display:flex;align-items:center;gap:7px;margin-top:7px;font-size:11px;font-weight:500;opacity:.9;">
+      <span style="font-weight:700;">{{ year }}</span>
+      <sc-if value="{{ showDirector }}" hint-placeholder-val="{{ true }}"><span style="width:3px;height:3px;border-radius:50%;background:currentColor;opacity:.6;"></span><span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ director }}</span></sc-if>
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- full one-sheet caption (standalone / art preview) -->
+  <sc-if value="{{ showArtCaption }}" hint-placeholder-val="{{ false }}">
+  <div style="position:absolute;left:0;right:0;bottom:0;padding:18px 17px 18px;z-index:3;background:linear-gradient(transparent, rgba(0,0,0,.5));">
+    <div style="font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;opacity:.82;">{{ eyebrow }}</div>
+    <div style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:{{ titleSize }}px;line-height:.88;letter-spacing:-.025em;margin-top:7px;text-wrap:balance;text-shadow:0 2px 18px rgba(0,0,0,.45);">{{ title }}</div>
+    <div style="font-size:12px;font-style:italic;opacity:.92;margin-top:8px;">{{ tagline }}</div>
+    <div style="height:1px;background:rgba(255,255,255,.3);margin:12px 0 9px;"></div>
+    <div style="display:flex;justify-content:space-between;align-items:center;font-size:9.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;opacity:.86;"><span>{{ genre }} · {{ year }}</span><span>{{ ratingDisplay }}</span></div>
+  </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:252,&quot;height&quot;:372},&quot;title&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Pulp Fiction&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;year&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;1994&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;genre&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Crimen&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;director&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Tarantino&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;rating&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;4.8&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;tagline&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;El crimen, servido con estilo.&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;color&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#FF5A4D&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;textColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#ffffff&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;art&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;compact&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;},&quot;titleSize&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:34,&quot;tsType&quot;:&quot;number&quot;},&quot;radius&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:22,&quot;tsType&quot;:&quot;number&quot;},&quot;seed&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:0,&quot;tsType&quot;:&quot;number&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props;
+    const compact = !!p.compact && p.compact !== 'false';
+    const art = !!p.art && p.art !== 'false';
+    const captionShown = !(p.caption === false || p.caption === 'false');
+    const seed = (p.seed != null ? +p.seed : (p.title || '').length);
+    const radius = p.radius ?? 22;
+    const gl = (p.genre || '').toLowerCase();
+
+    const key =
+        /crimen|negro/.test(gl) ? 'noir'
+      : /thriller|suspense|misterio/.test(gl) ? 'noir'
+      : /terror|horror/.test(gl) ? 'terror'
+      : /sci|cienc|fic/.test(gl) ? 'scifi'
+      : /acci/.test(gl) ? 'accion'
+      : /aventura/.test(gl) ? 'aventura'
+      : /anima/.test(gl) ? 'animacion'
+      : /comedia/.test(gl) ? 'comedia'
+      : /romance|romant/.test(gl) ? 'romance'
+      : 'drama';
+
+    const sx = seed % 2 === 0;          // true → motif anchored on the right
+    const an = sx ? 'right' : 'left';
+    const vy = 8 + (seed % 4) * 5;
+    const W = 'rgba(255,255,255,';
+    const B = 'rgba(0,0,0,';
+    const L = (s) => 'position:absolute;' + s + ';pointer-events:none;z-index:1;';
+
+    let grade = '', layers = [];
+
+    if (key === 'noir') {
+      grade = `linear-gradient(158deg, ${W}.14), transparent 24%, ${B}.5) 64%, ${B}.86))`;
+      layers.push(L(`top:-14%;${an}:-10%;width:60%;height:135%;transform-origin:50% 0;transform:rotate(${sx ? 20 : -20}deg);background:linear-gradient(180deg, ${W}.34), ${W}.05) 52%, transparent);clip-path:polygon(40% 0,60% 0,100% 100%,0 100%)`));
+      layers.push(L(`${sx ? 'left' : 'right'}:12%;top:${vy}%;width:34%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 38% 34%, ${W}.5), ${W}.08) 58%, transparent 72%)`));
+    } else if (key === 'terror') {
+      grade = `radial-gradient(125% 105% at 50% 20%, transparent 22%, ${B}.74) 76%, ${B}.94))`;
+      layers.push(L(`left:50%;top:30%;transform:translate(-50%,-50%);width:16%;aspect-ratio:1;border-radius:50%;background:${W}.1);box-shadow:0 0 0 7px ${W}.05),0 0 0 18px ${W}.04),0 0 0 34px ${W}.03),0 0 0 54px ${W}.02)`));
+    } else if (key === 'scifi') {
+      grade = `linear-gradient(180deg, ${B}.6), ${B}.12) 36%, ${W}.1) 50%, ${B}.3) 58%, ${B}.66))`;
+      layers.push(L(`left:50%;top:34%;transform:translateX(-50%);width:50%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle, ${W}.6), ${W}.14) 58%, transparent 70%)`));
+      layers.push(L(`left:-15%;right:-15%;bottom:0;height:44%;background:repeating-linear-gradient(0deg, transparent 0 11px, ${W}.13) 11px 12px);-webkit-mask:linear-gradient(transparent, #000 60%);mask:linear-gradient(transparent, #000 60%)`));
+      layers.push(L(`inset:0;background:radial-gradient(1.4px 1.4px at 18% 16%, #fff, transparent 60%),radial-gradient(1.4px 1.4px at 72% 22%, #fff, transparent 60%),radial-gradient(1.4px 1.4px at 40% 12%, #fff, transparent 60%),radial-gradient(1.4px 1.4px at 86% 14%, #fff, transparent 60%),radial-gradient(1.4px 1.4px at 28% 28%, #fff, transparent 60%);opacity:.5`));
+    } else if (key === 'accion') {
+      grade = `radial-gradient(130% 120% at ${sx ? '82%' : '18%'} 88%, ${W}.24), transparent 38%), linear-gradient(158deg, transparent 30%, ${B}.66))`;
+      layers.push(L(`top:32%;left:-12%;right:-12%;height:13%;background:${W}.16);transform:rotate(${sx ? -11 : 11}deg)`));
+      layers.push(L(`top:52%;left:-12%;right:-12%;height:6%;background:${B}.3);transform:rotate(${sx ? -11 : 11}deg)`));
+    } else if (key === 'aventura') {
+      grade = `linear-gradient(165deg, ${W}.12), transparent 40%, ${B}.55))`;
+      layers.push(L(`inset:0;background:repeating-conic-gradient(from ${sx ? 10 : -10}deg at ${sx ? 80 : 20}% 16%, ${W}.13) 0 6deg, transparent 6deg 15deg)`));
+      layers.push(L(`${an}:6%;top:4%;width:30%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle, ${W}.6), ${W}.12) 60%, transparent 72%)`));
+    } else if (key === 'animacion') {
+      grade = `linear-gradient(165deg, ${W}.26), transparent 46%, ${B}.4))`;
+      layers.push(L(`inset:0;background:repeating-conic-gradient(from 0deg at 50% 120%, ${W}.1) 0 7deg, transparent 7deg 18deg)`));
+      layers.push(L(`${an}:-10%;top:-12%;width:46%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 40% 38%, ${W}.4), ${W}.1) 64%, transparent 74%)`));
+      layers.push(L(`inset:0;background:radial-gradient(5px 5px at 22% 30%, ${W}.5), transparent 60%),radial-gradient(4px 4px at 74% 22%, ${W}.4), transparent 60%),radial-gradient(6px 6px at 60% 60%, ${B}.18), transparent 60%),radial-gradient(4px 4px at 34% 70%, ${W}.4), transparent 60%)`));
+    } else if (key === 'comedia') {
+      grade = `linear-gradient(160deg, ${W}.2), transparent 44%, ${B}.42))`;
+      layers.push(L(`top:-12%;${an}:-12%;width:72%;height:56%;background:${W}.14);transform:rotate(${sx ? -8 : 8}deg)`));
+      layers.push(L(`inset:0;background:radial-gradient(5px 5px at 24% 64%, ${B}.16), transparent 60%),radial-gradient(5px 5px at 78% 70%, ${W}.4), transparent 60%),radial-gradient(4px 4px at 56% 30%, ${W}.4), transparent 60%)`));
+    } else if (key === 'romance') {
+      grade = `linear-gradient(165deg, ${W}.24), transparent 42%, ${B}.46))`;
+      layers.push(L(`${sx ? 'left' : 'right'}:-16%;top:6%;width:62%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 42% 40%, ${W}.34), transparent 66%)`));
+      layers.push(L(`${sx ? 'right' : 'left'}:-10%;bottom:-14%;width:50%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 42% 40%, ${W}.22), transparent 66%)`));
+      layers.push(L(`inset:0;background:radial-gradient(7px 7px at 30% 28%, ${W}.28), transparent 60%),radial-gradient(5px 5px at 70% 40%, ${W}.22), transparent 60%),radial-gradient(9px 9px at 54% 66%, ${W}.18), transparent 60%)`));
+    } else {
+      grade = `linear-gradient(155deg, ${W}.16), transparent 34%, ${B}.58))`;
+      layers.push(L(`${an}:-18%;top:${vy}%;width:70%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 40% 38%, ${W}.32), ${B}.16) 70%)`));
+    }
+
+    const grainOp = key === 'terror' ? .16 : (key === 'animacion' || key === 'romance' ? .06 : .1);
+    const ratingValue = Number(p.rating ?? 0);
+    const ratingDisplay = Number.isFinite(ratingValue)
+      ? `${Math.max(0, Math.min(10, ratingValue * 2)).toFixed(1)}/10`
+      : String(p.rating ?? '0.0/10');
+
+    return {
+      color: p.color || '#FF5A4D',
+      textColor: p.textColor || '#ffffff',
+      radius,
+      genre: p.genre || 'Película',
+      rating: p.rating ?? '4.5',
+      ratingDisplay,
+      title: p.title || 'Título',
+      year: p.year || '1990',
+      director: p.director || '',
+      tagline: p.tagline || '',
+      eyebrow: 'Una película de ' + (p.director || ''),
+
+      gradeStyle: `position:absolute;inset:0;background:${grade};pointer-events:none;z-index:1;`,
+      l1: layers[0] || '', l2: layers[1] || '', l3: layers[2] || '', l4: layers[3] || '',
+      grainStyle: `position:absolute;inset:0;opacity:${grainOp};background:repeating-radial-gradient(circle at 28% 22%, ${B}.55) 0 1px, transparent 1px 3.4px);mix-blend-mode:overlay;pointer-events:none;z-index:2;`,
+      vignetteStyle: `position:absolute;inset:0;box-shadow:inset 0 0 ${art ? 72 : 42}px ${B}${art ? '.55)' : '.32)'};pointer-events:none;z-index:2;`,
+      keylineStyle: `position:absolute;inset:${compact ? 6 : 9}px;border:1px solid ${W}.16);border-radius:${Math.max(2, radius - 6)}px;pointer-events:none;z-index:2;`,
+
+      showArtCaption: art && captionShown,
+      showTop: !compact && !art,
+      showSimpleCaption: captionShown && !art,
+      showDirector: !compact && !!p.director,
+      showEyebrow: !compact && !!p.director,
+      titleSize: p.titleSize != null ? +p.titleSize : (compact ? 17 : 34),
+      captionPad: compact ? '14px 11px 12px' : '17px 16px 16px',
+    };
+  }
+}
+</script>
+</body>
+</html>

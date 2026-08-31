@@ -1,0 +1,16 @@
+{
+  "name": "filmswipe-functions",
+  "description": "Firebase Cloud Functions for Filmswipe",
+  "private": true,
+  "main": "index.js",
+  "engines": {
+    "node": "22"
+  },
+  "scripts": {
+    "lint": "node --check index.js"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.0.0",
+    "firebase-functions": "^7.0.0"
+  }
+}
