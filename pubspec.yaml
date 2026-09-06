@@ -61,6 +61,12 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
 
+  # This project uses CocoaPods for its existing iOS plugin integration.
+  # Pin the choice so Xcode Cloud's current Flutter SDK doesn't switch it to
+  # Swift Package Manager during an archive.
+  config:
+    enable-swift-package-manager: false
+
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
